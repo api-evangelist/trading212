@@ -1,0 +1,51 @@
+name: Trading 212 API FinOps
+description: >-
+  Trading 212 does not charge fees for API access itself. The platform is
+  commission-free for equity investing. However, users should be aware of
+  spread costs on trades, currency conversion fees when trading in a currency
+  other than the account's base currency, and any regulatory or platform fees
+  associated with the underlying account type. API usage does not incur
+  additional per-call or subscription charges beyond the standard Trading 212
+  account terms.
+url: https://www.trading212.com/trading-conditions
+costs:
+  - name: API Access Fee
+    amount: 0.00
+    currency: N/A
+    description: >-
+      No fee is charged for accessing or using the Trading 212 Public API.
+      API access is included at no cost for all eligible account holders.
+  - name: Commission on Trades
+    amount: 0.00
+    currency: N/A
+    description: >-
+      Trading 212 is commission-free. No per-trade commission is charged for
+      equity orders placed through the API.
+  - name: Currency Conversion
+    amount: variable
+    currency: N/A
+    description: >-
+      When trading instruments denominated in a currency different from the
+      account's base currency, Trading 212 applies a currency conversion fee.
+      The current rate is published on the Trading 212 trading conditions page.
+  - name: Stamp Duty (UK equities)
+    amount: 0.5%
+    currency: GBP
+    description: >-
+      UK government stamp duty of 0.5% applies to purchases of UK shares.
+      This is a regulatory cost, not a Trading 212 fee.
+notes:
+  - The API is in beta and free to use for all eligible account holders.
+  - There are no published rate tiers, API subscription fees, or per-call charges.
+  - Cost management for automated trading should focus on spread costs and currency
+    conversion rather than API usage fees.
+  - For CFD accounts (not supported by the API), different fee structures apply.
+  - Review the full Trading 212 fee schedule and API Terms for the most current
+    information before building production applications.
+references:
+  - name: Trading 212 Trading Conditions
+    url: https://www.trading212.com/trading-conditions
+  - name: API Terms and Conditions
+    url: https://www.trading212.com/legal-documentation/API-Terms_EN.pdf
+  - name: Help Centre
+    url: https://helpcentre.trading212.com/

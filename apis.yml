@@ -1,0 +1,91 @@
+name: Trading 212
+description: >-
+  Trading 212 is a commission-free investing platform offering a REST API for
+  accessing portfolio data, managing orders, viewing positions, retrieving
+  instrument metadata, and accessing account information. The API supports
+  Invest and Stocks ISA account types and provides both a live trading
+  environment and a paper trading (demo) environment for safe development and
+  testing.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/apis.yml
+version: "0.19"
+created: "2026-06-13"
+modified: "2026-06-13"
+specificationVersion: "0.19"
+tags:
+  - Investing
+  - Finance
+  - Trading
+  - Stocks
+  - Portfolio
+  - Commission-Free
+  - ISA
+apis:
+  - name: Trading 212 Public API
+    description: >-
+      The Trading 212 Public API (currently in beta) provides programmatic
+      access to your Invest and Stocks ISA accounts. Use it to retrieve account
+      summaries, manage equity orders (market, limit, stop, stop-limit),
+      inspect open positions, browse tradable instruments and exchange
+      schedules, manage Pie portfolios, and pull historical orders, dividends,
+      transactions, and export CSV reports.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.trading212.com/api
+    baseURL: https://live.trading212.com/api/v0
+    tags:
+      - Investing
+      - Orders
+      - Positions
+      - Portfolio
+      - Instruments
+      - History
+      - Pies
+    properties:
+      - type: Documentation
+        url: https://docs.trading212.com/api
+      - type: OpenAPI
+        url: https://t212public-api-docs.redoc.ly/
+      - type: Authentication
+        url: https://docs.trading212.com/api/section/authentication
+      - type: Environments
+        url: https://docs.trading212.com/api/section/general-information/api-environments
+      - type: RateLimiting
+        url: https://docs.trading212.com/api/section/rate-limiting/how-it-works
+      - type: TermsOfService
+        url: https://www.trading212.com/legal-documentation/API-Terms_EN.pdf
+      - type: UsefulLinks
+        url: https://docs.trading212.com/api/section/useful-links
+      - type: Community
+        url: https://community.trading212.com/
+      - type: Plans
+        url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
+      - type: RateLimits
+        url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
+      - type: FinOps
+        url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
+    contact:
+      - FN: Trading 212 Community
+        url: https://community.trading212.com/
+      - FN: Trading 212 Help Centre
+        url: https://helpcentre.trading212.com/
+common:
+  - type: TermsOfService
+    url: https://www.trading212.com/legal-documentation/API-Terms_EN.pdf
+  - type: Authentication
+    url: https://docs.trading212.com/api/section/authentication
+  - type: RateLimiting
+    url: https://docs.trading212.com/api/section/rate-limiting/how-it-works
+  - type: Community
+    url: https://community.trading212.com/
+  - type: HelpCentre
+    url: https://helpcentre.trading212.com/
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
+maintainers:
+  - FN: API Evangelist
+    url: https://apievangelist.com
+    email: info@apievangelist.com

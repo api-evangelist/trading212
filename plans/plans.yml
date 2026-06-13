@@ -1,0 +1,43 @@
+name: Trading 212 API Plans
+description: >-
+  Trading 212 does not publish tiered commercial pricing plans for API access.
+  The Public API (currently in beta) is available free of charge to all
+  registered Trading 212 users who hold a General Invest Account or a Stocks
+  and Shares ISA Account. Access is gated by the platform account type rather
+  than by a paid subscription tier. There are no published per-call or monthly
+  fees for API usage.
+plans:
+  - name: Free (Invest / ISA Account Holders)
+    description: >-
+      All Trading 212 users with a General Invest Account or Stocks and Shares
+      ISA Account can generate API keys at no additional cost. The API is
+      currently in beta. Rate limits are applied per account and vary by
+      endpoint. Commercial or multi-user use cases should review the API Terms
+      and Conditions for permitted usage.
+    url: https://helpcentre.trading212.com/hc/en-us/articles/14584770928157-Trading-212-API-key
+    free: true
+    features:
+      - Account summary and cash metrics
+      - All open positions and portfolio data
+      - Market, limit, stop, and stop-limit order placement
+      - Order cancellation and status retrieval
+      - Historical orders, dividends, and transactions
+      - CSV export generation and retrieval
+      - Tradable instruments and exchange metadata
+      - Pie portfolio creation, update, and deletion
+      - Paper trading (demo) environment available
+    rateLimits:
+      description: Per-account rate limits; vary by endpoint. See rate-limits.yml for details.
+      url: https://docs.trading212.com/api/section/rate-limiting/how-it-works
+    authentication:
+      type: HTTP Basic Auth (API Key + API Secret)
+      description: >-
+        API Key and API Secret are generated in the Trading 212 app under
+        Settings > API (Beta). Credentials are Base64-encoded and sent as an
+        HTTP Basic Authorization header. Keys can be scoped to specific
+        permissions and optionally restricted to trusted IP addresses.
+    restrictions:
+      - Only available for General Invest Account and Stocks and Shares ISA Account types
+      - CFD accounts are not supported
+      - Pies API endpoints are operational but will not receive further updates
+      - API is in beta; breaking changes may occur

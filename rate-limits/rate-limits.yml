@@ -1,0 +1,120 @@
+name: Trading 212 API Rate Limits
+description: >-
+  All Trading 212 API endpoints are subject to per-account rate limits,
+  regardless of which API key or IP address is used. The system uses a
+  burst-allowance model: you may consume your full quota rapidly (e.g., 50
+  requests in the first 5 seconds of a 1-minute window) or distribute them
+  evenly. Every API response includes rate-limit headers so clients can track
+  remaining quota and reset timing.
+url: https://docs.trading212.com/api/section/rate-limiting/how-it-works
+headers:
+  - name: x-ratelimit-limit
+    description: Total number of requests allowed in the current period
+  - name: x-ratelimit-period
+    description: Duration of the rate-limit window in seconds
+  - name: x-ratelimit-remaining
+    description: Number of requests remaining in the current period
+  - name: x-ratelimit-reset
+    description: Unix timestamp indicating when the rate-limit counter resets
+  - name: x-ratelimit-used
+    description: Number of requests already consumed in the current period
+model: burst-allowance
+note: >-
+  Limits are applied on a per-account basis. Burst usage (consuming the full
+  quota quickly) is permitted; clients must then wait for the reset window.
+limits:
+  # Account
+  - endpoint: GET /api/v0/equity/account/info
+    limit: 1
+    period: 1
+    unit: second
+    description: Retrieve account ID and currency
+  - endpoint: GET /api/v0/equity/account/summary
+    limit: 1
+    period: 5
+    unit: seconds
+    description: Cash breakdown and investment metrics
+  # Positions
+  - endpoint: GET /api/v0/equity/positions
+    limit: 1
+    period: 1
+    unit: second
+    description: All open positions
+  - endpoint: GET /api/v0/equity/positions/{ticker}
+    limit: 1
+    period: 1
+    unit: second
+    description: Single open position by ticker
+  # Orders
+  - endpoint: GET /api/v0/equity/orders
+    limit: 1
+    period: 5
+    unit: seconds
+    description: All active (pending) orders
+  - endpoint: GET /api/v0/equity/orders/{id}
+    limit: 1
+    period: 1
+    unit: second
+    description: Single pending order by ID
+  - endpoint: POST /api/v0/equity/orders/market
+    limit: 50
+    period: 60
+    unit: seconds
+    description: Place a market order
+  - endpoint: POST /api/v0/equity/orders/limit
+    limit: 1
+    period: 2
+    unit: seconds
+    description: Place a limit order
+  - endpoint: POST /api/v0/equity/orders/stop
+    limit: 1
+    period: 2
+    unit: seconds
+    description: Place a stop order
+  - endpoint: POST /api/v0/equity/orders/stop_limit
+    limit: 1
+    period: 2
+    unit: seconds
+    description: Place a stop-limit order
+  - endpoint: DELETE /api/v0/equity/orders/{id}
+    limit: 50
+    period: 60
+    unit: seconds
+    description: Cancel an active order
+  # Instruments / Metadata
+  - endpoint: GET /api/v0/equity/metadata/exchanges
+    limit: 1
+    period: 30
+    unit: seconds
+    description: All exchanges and working schedules
+  - endpoint: GET /api/v0/equity/metadata/instruments
+    limit: 1
+    period: 30
+    unit: seconds
+    description: All tradable instruments
+  # History
+  - endpoint: GET /api/v0/equity/history/orders
+    limit: 6
+    period: 60
+    unit: seconds
+    description: Historical order records
+  - endpoint: GET /api/v0/equity/history/transactions
+    limit: 6
+    period: 60
+    unit: seconds
+    description: Account fund movements and transactions
+  - endpoint: GET /api/v0/equity/history/dividends
+    limit: 6
+    period: 60
+    unit: seconds
+    description: Paid dividend history
+  - endpoint: GET /api/v0/equity/history/exports
+    limit: 1
+    period: 60
+    unit: seconds
+    description: Check CSV export status
+  - endpoint: POST /api/v0/equity/history/exports
+    limit: 1
+    period: 30
+    unit: seconds
+    description: Request a new CSV export
