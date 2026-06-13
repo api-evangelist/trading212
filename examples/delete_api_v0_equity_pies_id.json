@@ -1,0 +1,11 @@
+{
+  "operationId": "delete",
+  "summary": "Delete pie",
+  "tags": [
+    "Pies (Deprecated)"
+  ],
+  "method": "DELETE",
+  "path": "/api/v0/equity/pies/{id}",
+  "request": {},
+  "response": {}
+}

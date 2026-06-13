@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Position.json",
+  "title": "Position",
+  "description": "Trading 212 Position schema",
+  "properties": {
+    "averagePricePaid": {
+      "description": "Average price paid, in instrument currency, per share.",
+      "type": "number"
+    },
+    "createdAt": {
+      "description": "The ISO 8601 formatted date of when the position was opened.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "currentPrice": {
+      "description": "Current price, in instrument currency, of a single share.",
+      "type": "number"
+    },
+    "instrument": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Instrument"
+    },
+    "quantity": {
+      "description": "Total quantity of shares owned.",
+      "type": "number"
+    },
+    "quantityAvailableForTrading": {
+      "description": "Quantity of shares available for trading.",
+      "type": "number"
+    },
+    "quantityInPies": {
+      "description": "Quantity of shares currently used in pie.",
+      "type": "number"
+    },
+    "walletImpact": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/PositionWalletImpact",
+      "description": "Collects the financial impact of the position on the user's wallet."
+    }
+  },
+  "type": "object"
+}

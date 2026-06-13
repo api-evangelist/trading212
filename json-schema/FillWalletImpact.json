@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/FillWalletImpact.json",
+  "title": "FillWalletImpact",
+  "description": "Trading 212 FillWalletImpact schema",
+  "properties": {
+    "currency": {
+      "type": "string"
+    },
+    "fxRate": {
+      "type": "number"
+    },
+    "netValue": {
+      "type": "number"
+    },
+    "realisedProfitLoss": {
+      "type": "number"
+    },
+    "taxes": {
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Tax"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

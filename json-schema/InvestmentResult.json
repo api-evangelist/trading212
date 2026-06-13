@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/InvestmentResult.json",
+  "title": "InvestmentResult",
+  "description": "Trading 212 InvestmentResult schema",
+  "properties": {
+    "priceAvgInvestedValue": {
+      "type": "number"
+    },
+    "priceAvgResult": {
+      "type": "number"
+    },
+    "priceAvgResultCoef": {
+      "type": "number"
+    },
+    "priceAvgValue": {
+      "type": "number"
+    }
+  },
+  "type": "object"
+}

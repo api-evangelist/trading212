@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/InstrumentIssue.json",
+  "title": "InstrumentIssue",
+  "description": "Trading 212 InstrumentIssue schema",
+  "properties": {
+    "name": {
+      "enum": [
+        "DELISTED",
+        "SUSPENDED",
+        "NO_LONGER_TRADABLE",
+        "MAX_POSITION_SIZE_REACHED",
+        "APPROACHING_MAX_POSITION_SIZE",
+        "COMPLEX_INSTRUMENT_APP_TEST_REQUIRED",
+        "PRICE_TOO_LOW"
+      ],
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "IRREVERSIBLE",
+        "REVERSIBLE",
+        "INFORMATIVE"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

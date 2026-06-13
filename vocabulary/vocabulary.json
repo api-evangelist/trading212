@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trading 212 API Vocabulary",
+  "description": "Vocabulary terms used in the Trading 212 Public API",
+  "version": "0.1",
+  "terms": [
+    {
+      "term": "Accounts",
+      "description": "Access fundamental information about your trading account. Retrieve details such as your account ID, currency, and current cash balance.",
+      "type": "category"
+    },
+    {
+      "term": "Instruments",
+      "description": "Discover what you can trade. These endpoints provide comprehensive lists\nof all tradable instruments and the exchanges they belong to, including\ndetails like tickers and trading hours.",
+      "type": "category"
+    },
+    {
+      "term": "Orders",
+      "description": "**\u26a0\ufe0f Order Limitations**\n\n* Orders can be executed only in the **main account currency**\n\n\nPlace, monitor, and cancel equity trade orders. This section provides the\ncore functionality for programmatically executing your trading strategies\nfor stocks and ETFs.",
+      "type": "category"
+    },
+    {
+      "term": "Positions",
+      "description": "Get a real-time overview of all your open positions, including quantity, average price, and current profit or loss.",
+      "type": "category"
+    },
+    {
+      "term": "Historical events",
+      "description": "Review your account's trading history. Access detailed records of past\norders, dividend payments, and cash transactions, or generate downloadable\nCSV reports for analysis and record-keeping.",
+      "type": "category"
+    },
+    {
+      "term": "Pies (Deprecated)",
+      "description": "Manage your investment Pies. Use these endpoints to create, view, update, and delete your custom portfolios, making automated and diversified investing simple.\n\n**Deprecation notice:** The current state of the Pies API, while still operational, won't be further supported and updated.",
+      "type": "category"
+    },
+    {
+      "term": "AccountBucketDetailedResponse",
+      "description": "Trading 212 AccountBucketDetailedResponse data type",
+      "type": "schema"
+    },
+    {
+      "term": "AccountBucketInstrumentResult",
+      "description": "Trading 212 AccountBucketInstrumentResult data type",
+      "type": "schema"
+    },
+    {
+      "term": "AccountBucketInstrumentsDetailedResponse",
+      "description": "Trading 212 AccountBucketInstrumentsDetailedResponse data type",
+      "type": "schema"
+    },
+    {
+      "term": "AccountBucketResultResponse",
+      "description": "Trading 212 AccountBucketResultResponse data type",
+      "type": "schema"
+    },
+    {
+      "term": "AccountSummary",
+      "description": "Trading 212 AccountSummary data type",
+      "type": "schema"
+    },
+    {
+      "term": "Cash",
+      "description": "Trading 212 Cash data type",
+      "type": "schema"
+    },
+    {
+      "term": "DividendDetails",
+      "description": "Trading 212 DividendDetails data type",
+      "type": "schema"
+    },
+    {
+      "term": "DuplicateBucketRequest",
+      "description": "Trading 212 DuplicateBucketRequest data type",
+      "type": "schema"
+    },
+    {
+      "term": "EnqueuedReportResponse",
+      "description": "Trading 212 EnqueuedReportResponse data type",
+      "type": "schema"
+    },
+    {
+      "term": "Exchange",
+      "description": "Trading 212 Exchange data type",
+      "type": "schema"
+    },
+    {
+      "term": "Fill",
+      "description": "Trading 212 Fill data type",
+      "type": "schema"
+    },
+    {
+      "term": "FillWalletImpact",
+      "description": "Trading 212 FillWalletImpact data type",
+      "type": "schema"
+    },
+    {
+      "term": "HistoricalOrder",
+      "description": "Trading 212 HistoricalOrder data type",
+      "type": "schema"
+    },
+    {
+      "term": "HistoryDividendItem",
+      "description": "Trading 212 HistoryDividendItem data type",
+      "type": "schema"
+    },
+    {
+      "term": "HistoryTransactionItem",
+      "description": "Trading 212 HistoryTransactionItem data type",
+      "type": "schema"
+    },
+    {
+      "term": "Instrument",
+      "description": "Instrument information as given by /instruments endpoint.",
+      "type": "schema"
+    },
+    {
+      "term": "InstrumentIssue",
+      "description": "Trading 212 InstrumentIssue data type",
+      "type": "schema"
+    },
+    {
+      "term": "InvestmentResult",
+      "description": "Trading 212 InvestmentResult data type",
+      "type": "schema"
+    },
+    {
+      "term": "Investments",
+      "description": "Trading 212 Investments data type",
+      "type": "schema"
+    },
+    {
+      "term": "LimitRequest",
+      "description": "Trading 212 LimitRequest data type",
+      "type": "schema"
+    },
+    {
+      "term": "MarketRequest",
+      "description": "Trading 212 MarketRequest data type",
+      "type": "schema"
+    },
+    {
+      "term": "Order",
+      "description": "Trading 212 Order data type",
+      "type": "schema"
+    },
+    {
+      "term": "PaginatedResponseHistoricalOrder",
+      "description": "Trading 212 PaginatedResponseHistoricalOrder data type",
+      "type": "schema"
+    },
+    {
+      "term": "PaginatedResponseHistoryDividendItem",
+      "description": "Trading 212 PaginatedResponseHistoryDividendItem data type",
+      "type": "schema"
+    },
+    {
+      "term": "PaginatedResponseHistoryTransactionItem",
+      "description": "Trading 212 PaginatedResponseHistoryTransactionItem data type",
+      "type": "schema"
+    },
+    {
+      "term": "PieRequest",
+      "description": "Trading 212 PieRequest data type",
+      "type": "schema"
+    },
+    {
+      "term": "Position",
+      "description": "Trading 212 Position data type",
+      "type": "schema"
+    },
+    {
+      "term": "PositionWalletImpact",
+      "description": "Trading 212 PositionWalletImpact data type",
+      "type": "schema"
+    },
+    {
+      "term": "PublicReportRequest",
+      "description": "Trading 212 PublicReportRequest data type",
+      "type": "schema"
+    },
+    {
+      "term": "ReportDataIncluded",
+      "description": "Trading 212 ReportDataIncluded data type",
+      "type": "schema"
+    },
+    {
+      "term": "ReportResponse",
+      "description": "Trading 212 ReportResponse data type",
+      "type": "schema"
+    },
+    {
+      "term": "StopLimitRequest",
+      "description": "Trading 212 StopLimitRequest data type",
+      "type": "schema"
+    },
+    {
+      "term": "StopRequest",
+      "description": "Trading 212 StopRequest data type",
+      "type": "schema"
+    },
+    {
+      "term": "Tax",
+      "description": "Trading 212 Tax data type",
+      "type": "schema"
+    },
+    {
+      "term": "TimeEvent",
+      "description": "Trading 212 TimeEvent data type",
+      "type": "schema"
+    },
+    {
+      "term": "TimeValidity",
+      "description": "Specifies how long the order remains active: \n* DAY: The order will automatically expire if not executed by midnight in the time zone of the instrument's exchange.\n* GOOD_TILL_CANCEL: The order remains active indefinitely until it is either filled or explicitly cancelled by you.",
+      "type": "schema"
+    },
+    {
+      "term": "TradableInstrument",
+      "description": "Trading 212 TradableInstrument data type",
+      "type": "schema"
+    },
+    {
+      "term": "WorkingSchedule",
+      "description": "Trading 212 WorkingSchedule data type",
+      "type": "schema"
+    }
+  ]
+}

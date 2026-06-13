@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/PositionWalletImpact.json",
+  "title": "PositionWalletImpact",
+  "description": "Trading 212 PositionWalletImpact schema",
+  "properties": {
+    "currency": {
+      "description": "The currency code used to represent all the wallet impact information.",
+      "type": "string"
+    },
+    "currentValue": {
+      "description": "The current market value of the position.",
+      "type": "number"
+    },
+    "fxImpact": {
+      "description": "The positive or negative impact on the position's value due to currency rate changes.",
+      "type": "number"
+    },
+    "totalCost": {
+      "description": "The total cost paid for the position.",
+      "type": "number"
+    },
+    "unrealizedProfitLoss": {
+      "description": "The unrealized profit & loss for the position. Calculated as currentValue - totalCost.",
+      "type": "number"
+    }
+  },
+  "type": "object"
+}

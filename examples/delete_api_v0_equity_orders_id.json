@@ -1,0 +1,11 @@
+{
+  "operationId": "cancelOrder",
+  "summary": "Cancel a pending order",
+  "tags": [
+    "Orders"
+  ],
+  "method": "DELETE",
+  "path": "/api/v0/equity/orders/{id}",
+  "request": {},
+  "response": {}
+}

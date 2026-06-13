@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Instrument.json",
+  "title": "Instrument",
+  "description": "Instrument information as given by /instruments endpoint.",
+  "properties": {
+    "currency": {
+      "description": "Instrument currency in ISO 4217 format.",
+      "type": "string"
+    },
+    "isin": {
+      "description": "ISIN of the instrument.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the instrument.",
+      "type": "string"
+    },
+    "ticker": {
+      "description": "Unique instrument identifier.",
+      "example": "AAPL_US_EQ",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

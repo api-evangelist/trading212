@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/MarketRequest.json",
+  "title": "MarketRequest",
+  "description": "Trading 212 MarketRequest schema",
+  "properties": {
+    "extendedHours": {
+      "default": false,
+      "example": true,
+      "type": "boolean"
+    },
+    "quantity": {
+      "example": 0.1,
+      "type": "number"
+    },
+    "ticker": {
+      "example": "AAPL_US_EQ",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

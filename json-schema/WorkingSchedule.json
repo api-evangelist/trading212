@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/WorkingSchedule.json",
+  "title": "WorkingSchedule",
+  "description": "Trading 212 WorkingSchedule schema",
+  "properties": {
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "timeEvents": {
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/TimeEvent"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/TradableInstrument.json",
+  "title": "TradableInstrument",
+  "description": "Trading 212 TradableInstrument schema",
+  "properties": {
+    "addedOn": {
+      "description": "On the platform since",
+      "format": "date-time",
+      "type": "string"
+    },
+    "currencyCode": {
+      "description": "ISO 4217",
+      "example": "USD",
+      "maxLength": 3,
+      "minLength": 3,
+      "type": "string"
+    },
+    "extendedHours": {
+      "type": "boolean"
+    },
+    "isin": {
+      "type": "string"
+    },
+    "maxOpenQuantity": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "shortName": {
+      "type": "string"
+    },
+    "ticker": {
+      "description": "Unique identifier",
+      "example": "AAPL_US_EQ",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "CRYPTOCURRENCY",
+        "ETF",
+        "FOREX",
+        "FUTURES",
+        "INDEX",
+        "STOCK",
+        "WARRANT",
+        "CRYPTO",
+        "CVR",
+        "CORPACT"
+      ],
+      "example": "ETF",
+      "type": "string"
+    },
+    "workingScheduleId": {
+      "description": "Get items in the /exchanges endpoint",
+      "format": "int64",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}

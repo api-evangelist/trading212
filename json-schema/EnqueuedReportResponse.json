@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/EnqueuedReportResponse.json",
+  "title": "EnqueuedReportResponse",
+  "description": "Trading 212 EnqueuedReportResponse schema",
+  "properties": {
+    "reportId": {
+      "format": "int64",
+      "type": "integer"
+    }
+  },
+  "type": "object"
+}

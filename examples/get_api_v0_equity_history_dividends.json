@@ -1,0 +1,17 @@
+{
+  "operationId": "dividends",
+  "summary": "Get paid out dividends",
+  "tags": [
+    "Historical events"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/history/dividends",
+  "request": {},
+  "response": {
+    "status": 200,
+    "body": {
+      "items": [],
+      "nextPagePath": "example_nextPagePath"
+    }
+  }
+}

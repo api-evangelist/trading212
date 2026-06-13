@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/PaginatedResponseHistoryTransactionItem.json",
+  "title": "PaginatedResponseHistoryTransactionItem",
+  "description": "Trading 212 PaginatedResponseHistoryTransactionItem schema",
+  "properties": {
+    "items": {
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/HistoryTransactionItem"
+      },
+      "type": "array"
+    },
+    "nextPagePath": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

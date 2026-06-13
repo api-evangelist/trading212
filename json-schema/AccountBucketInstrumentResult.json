@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/AccountBucketInstrumentResult.json",
+  "title": "AccountBucketInstrumentResult",
+  "description": "Trading 212 AccountBucketInstrumentResult schema",
+  "properties": {
+    "currentShare": {
+      "type": "number"
+    },
+    "expectedShare": {
+      "type": "number"
+    },
+    "issues": {
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/InstrumentIssue"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "ownedQuantity": {
+      "type": "number"
+    },
+    "result": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/InvestmentResult"
+    },
+    "ticker": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

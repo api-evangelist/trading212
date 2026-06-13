@@ -1,0 +1,11 @@
+{
+  "operationId": "getAll",
+  "summary": "Fetch all pies",
+  "tags": [
+    "Pies (Deprecated)"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/pies",
+  "request": {},
+  "response": {}
+}

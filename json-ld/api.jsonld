@@ -1,0 +1,185 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "trading212": "https://docs.trading212.com/api/",
+    "hydra": "http://www.w3.org/ns/hydra/core#"
+  },
+  "@type": "WebAPI",
+  "@id": "https://docs.trading212.com/api",
+  "name": "Trading 212 Public API",
+  "description": "Welcome to the official API reference for the Trading 212 Public API! This",
+  "version": "v0",
+  "url": "https://docs.trading212.com/api",
+  "termsOfService": "https://www.trading212.com/legal-documentation/API-Terms_EN.pdf",
+  "provider": {
+    "@type": "Organization",
+    "name": "Trading 212",
+    "url": "https://www.trading212.com"
+  },
+  "availableChannel": [
+    {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://demo.trading212.com"
+    },
+    {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://live.trading212.com"
+    }
+  ],
+  "potentialAction": [
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/account/summary",
+      "name": "Get account summary",
+      "description": "Provides a breakdown of your account's cash and investment metrics,\nincluding available funds, invested capital, and total account value.\n\n**Rate limit:** 1 req / 5s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/history/dividends",
+      "name": "Get paid out dividends",
+      "description": "\n\n**Rate limit:** 6 req / 1m0s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/history/exports",
+      "name": "List generated reports",
+      "description": "Retrieves a list of all requested CSV reports and their current status. \n\n\n**Asynchronous Workflow:**\n\n1. Call `POST /history/exports` to request a report. You will receive a\n`reportId`.\n\n2. Periodica"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "POST",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/history/exports",
+      "name": "Request a CSV report",
+      "description": "Initiates the generation of a CSV report containing historical account\ndata. This is an asynchronous operation. The response will include a\n`reportId` which you can use to track the status of the gene"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/history/orders",
+      "name": "Get historical orders data",
+      "description": "\n\n**Rate limit:** 6 req / 1m0s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/history/transactions",
+      "name": "Get transactions",
+      "description": "Fetch superficial information about movements to and from your account\n\n**Rate limit:** 6 req / 1m0s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/metadata/exchanges",
+      "name": "Get exchanges metadata",
+      "description": "Retrieves all accessible exchanges and their corresponding working schedules.\nData is refreshed every 10 minutes.\n\n**Rate limit:** 1 req / 30s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/metadata/instruments",
+      "name": "Get all available instruments",
+      "description": "Retrieves all accessible instruments.\nData is refreshed every 10 minutes.\n\n**Rate limit:** 1 req / 50s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/orders",
+      "name": "Get all pending orders",
+      "description": "Retrieves a list of all orders that are currently active (i.e., not yet\nfilled, cancelled, or expired). This is useful for monitoring the status\nof your open positions and managing your trading strate"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "POST",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/orders/limit",
+      "name": "Place a Limit order",
+      "description": "Creates a new Limit order, which executes at a specified price or\nbetter.\n\n- To place a **buy** order, use a positive `quantity`. The order will\nfill at the `limitPrice` or lower.\n\n- To place a **sell"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "POST",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/orders/market",
+      "name": "Place a Market order",
+      "description": "Creates a new Market order, which is an instruction to trade a security\nimmediately at the next available price. \n\n- To place a **buy** order, use a positive `quantity`. \n\n- To place a **sell** order,"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "POST",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/orders/stop",
+      "name": "Place a Stop order",
+      "description": "Creates a new Stop order, which places a Market order once the\n`stopPrice` is reached.\n\n- To place a **buy** stop order, use a positive `quantity`.\n\n- To place a **sell** stop order (commonly a 'stop-"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "POST",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/orders/stop_limit",
+      "name": "Place a StopLimit order",
+      "description": "Creates a new Stop-Limit order, combining features of a Stop and a Limit\norder. The direction of the trade (buy/sell) is determined by the sign\nof the `quantity` field.\n\n\n**Execution Logic:**\n\n1.  Whe"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "DELETE",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/orders/{id}",
+      "name": "Cancel a pending order",
+      "description": "Attempts to cancel an active, unfilled order by its unique ID.\nCancellation is not guaranteed if the order is already in the process of\nbeing filled. A successful response indicates the cancellation r"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/orders/{id}",
+      "name": "Get a pending order by ID",
+      "description": "Retrieves a single pending order using its unique numerical ID. This is\nuseful for checking the status of a specific order you have previously\nplaced.\n\n**Rate limit:** 1 req / 1s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/pies",
+      "name": "Fetch all pies",
+      "description": "Fetches all pies for the account\n\n**Rate limit:** 1 req / 30s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "POST",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/pies",
+      "name": "Create pie",
+      "description": "Creates a pie for the account by given params\n\n**Rate limit:** 1 req / 5s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "DELETE",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/pies/{id}",
+      "name": "Delete pie",
+      "description": "Deletes a pie by given id\n\n**Rate limit:** 1 req / 5s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/pies/{id}",
+      "name": "Fetch a pie",
+      "description": "Fetches a pies for the account with detailed information\n\n**Rate limit:** 1 req / 5s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "POST",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/pies/{id}",
+      "name": "Update pie",
+      "description": "Updates a pie for the account by given params\n\n**Rate limit:** 1 req / 5s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "POST",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/pies/{id}/duplicate",
+      "name": "Duplicate pie",
+      "description": "Duplicates a pie for the account \n\n**Rate limit:** 1 req / 5s"
+    },
+    {
+      "@type": "EntryPoint",
+      "httpMethod": "GET",
+      "urlTemplate": "https://live.trading212.com/api/v0/equity/positions",
+      "name": "Fetch all open positions",
+      "description": "Fetch all open positions for your account\n\n**Rate limit:** 1 req / 1s"
+    }
+  ]
+}

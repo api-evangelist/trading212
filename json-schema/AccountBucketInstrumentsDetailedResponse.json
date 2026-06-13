@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/AccountBucketInstrumentsDetailedResponse.json",
+  "title": "AccountBucketInstrumentsDetailedResponse",
+  "description": "Trading 212 AccountBucketInstrumentsDetailedResponse schema",
+  "properties": {
+    "instruments": {
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/AccountBucketInstrumentResult"
+      },
+      "type": "array"
+    },
+    "settings": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/AccountBucketDetailedResponse"
+    }
+  },
+  "type": "object"
+}

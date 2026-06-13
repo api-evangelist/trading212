@@ -1,0 +1,31 @@
+{
+  "operationId": "duplicatePie",
+  "summary": "Duplicate pie",
+  "tags": [
+    "Pies (Deprecated)"
+  ],
+  "method": "POST",
+  "path": "/api/v0/equity/pies/{id}/duplicate",
+  "request": {
+    "icon": "example_icon",
+    "name": "example_name"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "instruments": [],
+      "settings": {
+        "creationDate": "2024-01-15T10:30:00Z",
+        "dividendCashAction": "REINVEST",
+        "endDate": "2024-01-15T10:30:00Z",
+        "goal": 100.0,
+        "icon": "example_icon",
+        "id": 1,
+        "initialInvestment": 100.0,
+        "instrumentShares": {},
+        "name": "example_name",
+        "publicUrl": "example_publicUrl"
+      }
+    }
+  }
+}

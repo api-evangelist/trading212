@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/DuplicateBucketRequest.json",
+  "title": "DuplicateBucketRequest",
+  "description": "Trading 212 DuplicateBucketRequest schema",
+  "properties": {
+    "icon": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

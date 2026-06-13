@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/AccountBucketDetailedResponse.json",
+  "title": "AccountBucketDetailedResponse",
+  "description": "Trading 212 AccountBucketDetailedResponse schema",
+  "properties": {
+    "creationDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "dividendCashAction": {
+      "enum": [
+        "REINVEST",
+        "TO_ACCOUNT_CASH"
+      ],
+      "type": "string"
+    },
+    "endDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "goal": {
+      "type": "number"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "initialInvestment": {
+      "type": "number"
+    },
+    "instrumentShares": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    },
+    "publicUrl": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

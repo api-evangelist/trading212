@@ -1,0 +1,25 @@
+{
+  "operationId": "requestReport",
+  "summary": "Request a CSV report",
+  "tags": [
+    "Historical events"
+  ],
+  "method": "POST",
+  "path": "/api/v0/equity/history/exports",
+  "request": {
+    "dataIncluded": {
+      "includeDividends": true,
+      "includeInterest": true,
+      "includeOrders": true,
+      "includeTransactions": true
+    },
+    "timeFrom": "2024-01-15T10:30:00Z",
+    "timeTo": "2024-01-15T10:30:00Z"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "reportId": 1
+    }
+  }
+}

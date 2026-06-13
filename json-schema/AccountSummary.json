@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/AccountSummary.json",
+  "title": "AccountSummary",
+  "description": "Trading 212 AccountSummary schema",
+  "properties": {
+    "cash": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Cash"
+    },
+    "currency": {
+      "description": "Primary account currency in ISO 4217 format.",
+      "type": "string"
+    },
+    "id": {
+      "description": "Primary trading account number. This is the same account ID you would see in the Trading 212 web or mobile application.",
+      "format": "int64",
+      "type": "integer"
+    },
+    "investments": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Investments"
+    },
+    "totalValue": {
+      "description": "Investments value in your account's primary currency.",
+      "type": "number"
+    }
+  },
+  "type": "object"
+}

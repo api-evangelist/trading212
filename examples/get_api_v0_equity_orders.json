@@ -1,0 +1,11 @@
+{
+  "operationId": "orders",
+  "summary": "Get all pending orders",
+  "tags": [
+    "Orders"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/orders",
+  "request": {},
+  "response": {}
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/PieRequest.json",
+  "title": "PieRequest",
+  "description": "Trading 212 PieRequest schema",
+  "properties": {
+    "dividendCashAction": {
+      "enum": [
+        "REINVEST",
+        "TO_ACCOUNT_CASH"
+      ],
+      "type": "string"
+    },
+    "endDate": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "goal": {
+      "description": "Total desired value of the pie in account currency",
+      "type": "number"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "instrumentShares": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "example": {
+        "AAPL_US_EQ": 0.5,
+        "MSFT_US_EQ": 0.5
+      },
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

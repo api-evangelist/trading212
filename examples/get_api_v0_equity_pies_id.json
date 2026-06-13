@@ -1,0 +1,28 @@
+{
+  "operationId": "getDetailed",
+  "summary": "Fetch a pie",
+  "tags": [
+    "Pies (Deprecated)"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/pies/{id}",
+  "request": {},
+  "response": {
+    "status": 200,
+    "body": {
+      "instruments": [],
+      "settings": {
+        "creationDate": "2024-01-15T10:30:00Z",
+        "dividendCashAction": "REINVEST",
+        "endDate": "2024-01-15T10:30:00Z",
+        "goal": 100.0,
+        "icon": "example_icon",
+        "id": 1,
+        "initialInvestment": 100.0,
+        "instrumentShares": {},
+        "name": "example_name",
+        "publicUrl": "example_publicUrl"
+      }
+    }
+  }
+}

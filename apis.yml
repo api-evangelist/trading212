@@ -44,7 +44,15 @@ apis:
       - type: Documentation
         url: https://docs.trading212.com/api
       - type: OpenAPI
-        url: https://t212public-api-docs.redoc.ly/
+        url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/openapi/openapi.yaml
+      - type: JSONSchema
+        url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/
+      - type: Examples
+        url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/examples/
+      - type: Vocabulary
+        url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
+      - type: JSONLD
+        url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
       - type: Authentication
         url: https://docs.trading212.com/api/section/authentication
       - type: Environments

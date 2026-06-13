@@ -1,0 +1,11 @@
+{
+  "operationId": "instruments",
+  "summary": "Get all available instruments",
+  "tags": [
+    "Instruments"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/metadata/instruments",
+  "request": {},
+  "response": {}
+}

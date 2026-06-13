@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Tax.json",
+  "title": "Tax",
+  "description": "Trading 212 Tax schema",
+  "properties": {
+    "chargedAt": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "name": {
+      "enum": [
+        "COMMISSION_TURNOVER",
+        "CURRENCY_CONVERSION_FEE",
+        "FINRA_FEE",
+        "FRENCH_TRANSACTION_TAX",
+        "PTM_LEVY",
+        "STAMP_DUTY",
+        "STAMP_DUTY_RESERVE_TAX",
+        "TRANSACTION_FEE"
+      ],
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number"
+    }
+  },
+  "type": "object"
+}

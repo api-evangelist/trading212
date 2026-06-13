@@ -1,0 +1,11 @@
+{
+  "operationId": "getPositions",
+  "summary": "Fetch all open positions",
+  "tags": [
+    "Positions"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/positions",
+  "request": {},
+  "response": {}
+}

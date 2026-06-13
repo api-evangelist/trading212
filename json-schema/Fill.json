@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Fill.json",
+  "title": "Fill",
+  "description": "Trading 212 Fill schema",
+  "properties": {
+    "filledAt": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "price": {
+      "type": "number"
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "tradingMethod": {
+      "enum": [
+        "TOTV",
+        "OTC"
+      ],
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "TRADE",
+        "STOCK_SPLIT",
+        "STOCK_DISTRIBUTION",
+        "FOP",
+        "FOP_CORRECTION",
+        "CUSTOM_STOCK_DISTRIBUTION",
+        "EQUITY_RIGHTS",
+        "SCRIP_STOCK_DIVIDENDS",
+        "STOCK_DIVIDENDS",
+        "STOCK_ACQUISITION",
+        "CASH_AND_STOCK_ACQUISITION",
+        "SPIN_OFF"
+      ],
+      "type": "string"
+    },
+    "walletImpact": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/FillWalletImpact"
+    }
+  },
+  "type": "object"
+}

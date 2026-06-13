@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Order.json",
+  "title": "Order",
+  "description": "Trading 212 Order schema",
+  "properties": {
+    "createdAt": {
+      "description": "The ISO 8601 formatted date of when the order was created.",
+      "format": "date-time",
+      "type": "string"
+    },
+    "currency": {
+      "description": "The currency used for the order in ISO 4217 format.",
+      "type": "string"
+    },
+    "extendedHours": {
+      "description": "If true, the order is eligible for execution outside regular trading hours.",
+      "type": "boolean"
+    },
+    "filledQuantity": {
+      "description": "The number of shares that have been successfully executed. Applicable to quantity orders.",
+      "type": "number"
+    },
+    "filledValue": {
+      "description": "The total monetary value of the executed portion of the order. Applicable to orders placed by value.Note: Placing orders by value is not currently supported via the API but can be done through other Trading 212 platforms.",
+      "type": "number"
+    },
+    "id": {
+      "description": "A unique, system-generated identifier for the order.",
+      "format": "int64",
+      "type": "integer"
+    },
+    "initiatedFrom": {
+      "description": "How the order was initiated.",
+      "enum": [
+        "API",
+        "IOS",
+        "ANDROID",
+        "WEB",
+        "SYSTEM",
+        "AUTOINVEST",
+        "INSTRUMENT_AUTOINVEST"
+      ],
+      "type": "string"
+    },
+    "instrument": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Instrument"
+    },
+    "limitPrice": {
+      "description": "Applicable to LIMIT and STOP_LIMIT orders.",
+      "type": "number"
+    },
+    "quantity": {
+      "description": "The total number of shares requested. Applicable to quantity orders.",
+      "type": "number"
+    },
+    "side": {
+      "description": "Indicates whether the order is BUY or SELL.",
+      "enum": [
+        "BUY",
+        "SELL"
+      ],
+      "type": "string"
+    },
+    "status": {
+      "description": "The current state of the order in its lifecycle.",
+      "enum": [
+        "LOCAL",
+        "UNCONFIRMED",
+        "CONFIRMED",
+        "NEW",
+        "CANCELLING",
+        "CANCELLED",
+        "PARTIALLY_FILLED",
+        "FILLED",
+        "REJECTED",
+        "REPLACING",
+        "REPLACED"
+      ],
+      "type": "string"
+    },
+    "stopPrice": {
+      "description": "Applicable to STOP and STOP_LIMIT orders.",
+      "type": "number"
+    },
+    "strategy": {
+      "description": "The strategy used to place the order, either by QUANTITY or VALUE. The API currently only supports placing orders by QUANTITY.",
+      "enum": [
+        "QUANTITY",
+        "VALUE"
+      ],
+      "type": "string"
+    },
+    "ticker": {
+      "description": "Unique instrument identifier. Get from the /instruments endpoint",
+      "example": "AAPL_US_EQ",
+      "type": "string"
+    },
+    "timeInForce": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/TimeValidity"
+    },
+    "type": {
+      "enum": [
+        "LIMIT",
+        "STOP",
+        "MARKET",
+        "STOP_LIMIT"
+      ],
+      "type": "string"
+    },
+    "value": {
+      "description": "The total monetary value of the order. Applicable to value orders.",
+      "type": "number"
+    }
+  },
+  "type": "object"
+}

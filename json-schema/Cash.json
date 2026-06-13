@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Cash.json",
+  "title": "Cash",
+  "description": "Trading 212 Cash schema",
+  "properties": {
+    "availableToTrade": {
+      "description": "Funds available for investing.",
+      "type": "number"
+    },
+    "inPies": {
+      "description": "It\u2019s the sum of the cash inside of all pies that is not yet invested.",
+      "type": "number"
+    },
+    "reservedForOrders": {
+      "description": "The amount of cash reserved for pending orders. This cash is not available for placing new trades.",
+      "type": "number"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/HistoricalOrder.json",
+  "title": "HistoricalOrder",
+  "description": "Trading 212 HistoricalOrder schema",
+  "properties": {
+    "fill": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Fill"
+    },
+    "order": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Order"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,17 @@
+{
+  "operationId": "transactions",
+  "summary": "Get transactions",
+  "tags": [
+    "Historical events"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/history/transactions",
+  "request": {},
+  "response": {
+    "status": 200,
+    "body": {
+      "items": [],
+      "nextPagePath": "example_nextPagePath"
+    }
+  }
+}

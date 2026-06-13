@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/ReportResponse.json",
+  "title": "ReportResponse",
+  "description": "Trading 212 ReportResponse schema",
+  "properties": {
+    "dataIncluded": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/ReportDataIncluded"
+    },
+    "downloadLink": {
+      "type": "string"
+    },
+    "reportId": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "status": {
+      "enum": [
+        "Queued",
+        "Processing",
+        "Running",
+        "Canceled",
+        "Failed",
+        "Finished"
+      ],
+      "type": "string"
+    },
+    "timeFrom": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "timeTo": {
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

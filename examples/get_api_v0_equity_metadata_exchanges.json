@@ -1,0 +1,11 @@
+{
+  "operationId": "exchanges",
+  "summary": "Get exchanges metadata",
+  "tags": [
+    "Instruments"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/metadata/exchanges",
+  "request": {},
+  "response": {}
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/ReportDataIncluded.json",
+  "title": "ReportDataIncluded",
+  "description": "Trading 212 ReportDataIncluded schema",
+  "properties": {
+    "includeDividends": {
+      "type": "boolean"
+    },
+    "includeInterest": {
+      "type": "boolean"
+    },
+    "includeOrders": {
+      "type": "boolean"
+    },
+    "includeTransactions": {
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

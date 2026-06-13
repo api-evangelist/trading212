@@ -1,0 +1,11 @@
+{
+  "operationId": "getReports",
+  "summary": "List generated reports",
+  "tags": [
+    "Historical events"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/history/exports",
+  "request": {},
+  "response": {}
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/StopLimitRequest.json",
+  "title": "StopLimitRequest",
+  "description": "Trading 212 StopLimitRequest schema",
+  "properties": {
+    "limitPrice": {
+      "example": 100.23,
+      "type": "number"
+    },
+    "quantity": {
+      "example": 0.1,
+      "type": "number"
+    },
+    "stopPrice": {
+      "example": 100.23,
+      "type": "number"
+    },
+    "ticker": {
+      "example": "AAPL_US_EQ",
+      "type": "string"
+    },
+    "timeValidity": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/TimeValidity",
+      "description": "Expiration",
+      "example": "DAY"
+    }
+  },
+  "type": "object"
+}

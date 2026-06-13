@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/PublicReportRequest.json",
+  "title": "PublicReportRequest",
+  "description": "Trading 212 PublicReportRequest schema",
+  "properties": {
+    "dataIncluded": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/ReportDataIncluded"
+    },
+    "timeFrom": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "timeTo": {
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,38 @@
+{
+  "operationId": "orderById",
+  "summary": "Get a pending order by ID",
+  "tags": [
+    "Orders"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/orders/{id}",
+  "request": {},
+  "response": {
+    "status": 200,
+    "body": {
+      "createdAt": "2024-01-15T10:30:00Z",
+      "currency": "example_currency",
+      "extendedHours": true,
+      "filledQuantity": 100.0,
+      "filledValue": 100.0,
+      "id": 1,
+      "initiatedFrom": "API",
+      "instrument": {
+        "currency": "example_currency",
+        "isin": "example_isin",
+        "name": "example_name",
+        "ticker": "example_ticker"
+      },
+      "limitPrice": 100.0,
+      "quantity": 100.0,
+      "side": "BUY",
+      "status": "LOCAL",
+      "stopPrice": 100.0,
+      "strategy": "QUANTITY",
+      "ticker": "example_ticker",
+      "timeInForce": {},
+      "type": "LIMIT",
+      "value": 100.0
+    }
+  }
+}

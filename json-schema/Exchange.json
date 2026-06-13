@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/Exchange.json",
+  "title": "Exchange",
+  "description": "Trading 212 Exchange schema",
+  "properties": {
+    "id": {
+      "format": "int64",
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "workingSchedules": {
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-schema/WorkingSchedule"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

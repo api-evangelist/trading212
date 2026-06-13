@@ -1,0 +1,29 @@
+{
+  "operationId": "getAccountSummary",
+  "summary": "Get account summary",
+  "tags": [
+    "Accounts"
+  ],
+  "method": "GET",
+  "path": "/api/v0/equity/account/summary",
+  "request": {},
+  "response": {
+    "status": 200,
+    "body": {
+      "cash": {
+        "availableToTrade": 100.0,
+        "inPies": 100.0,
+        "reservedForOrders": 100.0
+      },
+      "currency": "example_currency",
+      "id": 1,
+      "investments": {
+        "currentValue": 100.0,
+        "realizedProfitLoss": 100.0,
+        "totalCost": 100.0,
+        "unrealizedProfitLoss": 100.0
+      },
+      "totalValue": 100.0
+    }
+  }
+}
