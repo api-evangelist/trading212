@@ -6,7 +6,7 @@ description: >-
   Invest and Stocks ISA account types and provides both a live trading
   environment and a paper trading (demo) environment for safe development and
   testing.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/apis.yml
 version: "0.19"
 created: "2026-06-13"
@@ -29,7 +29,7 @@ apis:
       inspect open positions, browse tradable instruments and exchange
       schedules, manage Pie portfolios, and pull historical orders, dividends,
       transactions, and export CSV reports.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.trading212.com/api
     baseURL: https://live.trading212.com/api/v0
     tags:
