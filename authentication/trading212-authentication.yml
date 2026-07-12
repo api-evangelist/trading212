@@ -1,0 +1,22 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.yaml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: authWithSecretKey
+  type: http
+  scheme: basic
+  description: Use your API Key as the username and your API Secret as the password
+  sources:
+  - openapi/openapi.yaml
+- name: legacyApiKeyHeader
+  type: apiKey
+  in: header
+  parameter: Authorization
+  sources:
+  - openapi/openapi.yaml

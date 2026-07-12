@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: docs.trading212.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 27 07:21:53 2026 GMT
+  hsts: false
+- host: live.trading212.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  8 10:45:18 2026 GMT
+  hsts: null
+- host: demo.trading212.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  8 10:45:18 2026 GMT
+  hsts: null
+domains:
+- domain: trading212.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

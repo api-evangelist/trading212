@@ -77,6 +77,12 @@ apis:
       - FN: Trading 212 Help Centre
         url: https://helpcentre.trading212.com/
 common:
+  - type: VulnerabilityDisclosure
+    url: security/trading212-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/trading212-domain-security.yml
+  - type: Authentication
+    url: authentication/trading212-authentication.yml
   - type: TermsOfService
     url: https://www.trading212.com/legal-documentation/API-Terms_EN.pdf
   - type: Authentication
