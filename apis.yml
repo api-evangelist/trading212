@@ -77,6 +77,8 @@ apis:
       - FN: Trading 212 Help Centre
         url: https://helpcentre.trading212.com/
 common:
+  - type: AgenticAccess
+    url: agentic-access/trading212-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/trading212-vulnerability-disclosure.yml
   - type: DomainSecurity
