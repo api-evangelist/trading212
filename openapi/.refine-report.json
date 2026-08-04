@@ -1,0 +1,24 @@
+{
+  "provider": "trading212",
+  "sources": [
+    "trading212-accounts-api-openapi.yml",
+    "trading212-historical-events-api-openapi.yml",
+    "trading212-instruments-api-openapi.yml",
+    "trading212-orders-api-openapi.yml",
+    "trading212-pies-deprecated-api-openapi.yml",
+    "trading212-positions-api-openapi.yml"
+  ],
+  "outputs": [
+    "trading212-accounts-api-openapi.yml",
+    "trading212-historical-events-api-openapi.yml",
+    "trading212-instruments-api-openapi.yml",
+    "trading212-orders-api-openapi.yml",
+    "trading212-pies-deprecated-api-openapi.yml",
+    "trading212-positions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
