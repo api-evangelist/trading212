@@ -1,0 +1,2207 @@
+{
+  "item": [
+    {
+      "id": "7d1bc446-5138-43ca-8a46-0eec2ff91012",
+      "name": "Pies (Deprecated)",
+      "description": {
+        "content": "Manage your investment Pies. Use these endpoints to create, view, update, and delete your custom portfolios, making automated and diversified investing simple.\n\n**Deprecation notice:** The current state of the Pies API, while still operational, won't be further supported and updated.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4eac9132-fff2-49b1-8525-31e8e1f874d0",
+          "name": "Fetch all pies",
+          "request": {
+            "name": "Fetch all pies",
+            "description": {
+              "content": "Fetches all pies for the account\n\n**Rate limit:** 1 req / 30s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "pies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "eee8bd40-ba50-4160-88ba-85ffa9d09378",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"cash\": 2002.3849669477845,\n    \"dividendDetails\": {\n      \"gained\": 8053.8010834258575,\n      \"inCash\": 8731.477591160989,\n      \"reinvested\": 45.584349011743576\n    },\n    \"id\": 5142,\n    \"progress\": 0.5,\n    \"result\": {\n      \"priceAvgInvestedValue\": 34.74268715262796,\n      \"priceAvgResult\": 5937.312329189504,\n      \"priceAvgResultCoef\": 8602.222565371581,\n      \"priceAvgValue\": 4272.745111987872\n    },\n    \"status\": \"ON_TRACK\"\n  },\n  {\n    \"cash\": 5047.694088056513,\n    \"dividendDetails\": {\n      \"gained\": 4011.033852839211,\n      \"inCash\": 3984.907586323607,\n      \"reinvested\": 3006.7631698713503\n    },\n    \"id\": 3409,\n    \"progress\": 0.5,\n    \"result\": {\n      \"priceAvgInvestedValue\": 153.03835586937043,\n      \"priceAvgResult\": 2219.162704618606,\n      \"priceAvgResultCoef\": 9898.447110033316,\n      \"priceAvgValue\": 1527.646665834934\n    },\n    \"status\": \"ON_TRACK\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd2004d4-e8e1-4de6-b1ce-6ba6b7a9d081",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8389e28f-5e5a-44e6-92e4-55b8a2263509",
+              "name": "Scope( pies:read ) missing for API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4c1c9251-388e-45f3-a6dc-5a76bb2f7aeb",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "863d7ac2-8402-4af3-8e4c-1fbb58ee1f46",
+              "name": "Limited: 1 / 30s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22c92aaf-3040-42a9-97b9-ab2f086cd740",
+          "name": "Create pie",
+          "request": {
+            "name": "Create pie",
+            "description": {
+              "content": "Creates a pie for the account by given params\n\n**Rate limit:** 1 req / 5s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "pies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"key_0\": \"<number>\",\n    \"key_1\": \"<number>\"\n  },\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "855becf6-fd68-4e95-84e3-fb43253ef1e3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instruments\": [\n    {\n      \"currentShare\": 145.58866510168244,\n      \"expectedShare\": 3033.8438103939834,\n      \"issues\": [\n        {\n          \"name\": \"NO_LONGER_TRADABLE\",\n          \"severity\": \"INFORMATIVE\"\n        },\n        {\n          \"name\": \"DELISTED\",\n          \"severity\": \"IRREVERSIBLE\"\n        }\n      ],\n      \"ownedQuantity\": 4353.341044346056,\n      \"result\": {\n        \"priceAvgInvestedValue\": 8444.779985929335,\n        \"priceAvgResult\": 8403.492573545916,\n        \"priceAvgResultCoef\": 7185.676248955461,\n        \"priceAvgValue\": 848.9522270647465\n      },\n      \"ticker\": \"string\"\n    },\n    {\n      \"currentShare\": 8928.65828100375,\n      \"expectedShare\": 7599.889241310415,\n      \"issues\": [\n        {\n          \"name\": \"DELISTED\",\n          \"severity\": \"REVERSIBLE\"\n        },\n        {\n          \"name\": \"SUSPENDED\",\n          \"severity\": \"INFORMATIVE\"\n        }\n      ],\n      \"ownedQuantity\": 7701.025865699838,\n      \"result\": {\n        \"priceAvgInvestedValue\": 5401.859152180018,\n        \"priceAvgResult\": 317.94811286521394,\n        \"priceAvgResultCoef\": 1228.2126192531928,\n        \"priceAvgValue\": 7761.275589438284\n      },\n      \"ticker\": \"string\"\n    }\n  ],\n  \"settings\": {\n    \"creationDate\": \"1971-01-22T00:10:24.016Z\",\n    \"dividendCashAction\": \"REINVEST\",\n    \"endDate\": \"2013-01-17T09:36:18.644Z\",\n    \"goal\": 1828.5162321136727,\n    \"icon\": \"string\",\n    \"id\": 8698,\n    \"initialInvestment\": 3934.408172904581,\n    \"instrumentShares\": {\n      \"key_0\": 9769.552646448914,\n      \"key_1\": 4080.0080815873894,\n      \"key_2\": 410.5685604349052\n    },\n    \"name\": \"string\",\n    \"publicUrl\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d72a454d-5873-448d-aeee-f40c5d5a5716",
+              "name": "Bad create request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05c31871-b61a-43e0-be92-0e7107d7f858",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "73608d5c-0ea3-4b6f-8337-04d8b5d183ed",
+              "name": "Scope( pies:write ) missing for API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "77ccfb23-9069-4ed7-83d3-b9cabbf3b3dc",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1ac4feab-1fd9-4204-b865-c1b391fcab2a",
+              "name": "Limited: 1 / 5s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b18bc310-a027-4bd5-bd42-9cf5c30478c8",
+          "name": "Delete pie",
+          "request": {
+            "name": "Delete pie",
+            "description": {
+              "content": "Deletes a pie by given id\n\n**Rate limit:** 1 req / 5s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "pies",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "86c0f609-b1ea-4ffb-a72f-13f21f0eeeff",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e81842a7-96cc-4802-858f-095eda2cb568",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "feda55be-3ac0-480e-9138-6247d4f5b33e",
+              "name": "Scope( pies:write ) missing for API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7aded05b-d041-498f-9932-00242ee1003b",
+              "name": "Pie not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4faba6d7-1221-4c84-a89f-0adc40884026",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "70044ddd-df7c-4b2c-9fa2-de2aa9fb4b96",
+              "name": "Limited: 1 / 5s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8286029c-a35d-4d19-a843-6d51c1a314fe",
+          "name": "Fetch a pie",
+          "request": {
+            "name": "Fetch a pie",
+            "description": {
+              "content": "Fetches a pies for the account with detailed information\n\n**Rate limit:** 1 req / 5s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "pies",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "de1f00cd-5e33-4704-899d-711ba35ed1ee",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instruments\": [\n    {\n      \"currentShare\": 8253.974247236407,\n      \"expectedShare\": 6564.934250481002,\n      \"issues\": [\n        {\n          \"name\": \"COMPLEX_INSTRUMENT_APP_TEST_REQUIRED\",\n          \"severity\": \"IRREVERSIBLE\"\n        },\n        {\n          \"name\": \"MAX_POSITION_SIZE_REACHED\",\n          \"severity\": \"REVERSIBLE\"\n        }\n      ],\n      \"ownedQuantity\": 9689.87665418884,\n      \"result\": {\n        \"priceAvgInvestedValue\": 9368.02982266256,\n        \"priceAvgResult\": 5465.357706445243,\n        \"priceAvgResultCoef\": 1687.1224766961468,\n        \"priceAvgValue\": 9807.391653931407\n      },\n      \"ticker\": \"string\"\n    },\n    {\n      \"currentShare\": 510.0008073772067,\n      \"expectedShare\": 7693.883779439833,\n      \"issues\": [\n        {\n          \"name\": \"COMPLEX_INSTRUMENT_APP_TEST_REQUIRED\",\n          \"severity\": \"INFORMATIVE\"\n        },\n        {\n          \"name\": \"MAX_POSITION_SIZE_REACHED\",\n          \"severity\": \"REVERSIBLE\"\n        }\n      ],\n      \"ownedQuantity\": 2126.027644953481,\n      \"result\": {\n        \"priceAvgInvestedValue\": 9200.963023705444,\n        \"priceAvgResult\": 5434.527103581418,\n        \"priceAvgResultCoef\": 1378.5790269711263,\n        \"priceAvgValue\": 9908.698629422155\n      },\n      \"ticker\": \"string\"\n    }\n  ],\n  \"settings\": {\n    \"creationDate\": \"2023-03-21T21:31:35.632Z\",\n    \"dividendCashAction\": \"REINVEST\",\n    \"endDate\": \"1956-05-07T04:19:08.356Z\",\n    \"goal\": 4552.886003213473,\n    \"icon\": \"string\",\n    \"id\": 4217,\n    \"initialInvestment\": 1308.5846758154828,\n    \"instrumentShares\": {\n      \"key_0\": 3078.833491005708\n    },\n    \"name\": \"string\",\n    \"publicUrl\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ca5761f-1f9c-44b6-93d0-70c4f6548993",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "787f12ae-8e56-4d21-8e70-b6d7ad8aa750",
+              "name": "Scope( pies:read ) missing for API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1fad51ba-d463-4e24-ab26-2482e59611ad",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ad5b85f9-a78c-4cbd-9911-adc7bd3829f4",
+              "name": "Limited: 1 / 5s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71234273-7af4-44fc-9d40-e9ddd61167eb",
+          "name": "Update pie",
+          "request": {
+            "name": "Update pie",
+            "description": {
+              "content": "Updates a pie for the account by given params\n\n**Rate limit:** 1 req / 5s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "pies",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"key_0\": \"<number>\",\n    \"key_1\": \"<number>\"\n  },\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8625c531-7c20-4dd4-bbbd-c7e30ef58537",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instruments\": [\n    {\n      \"currentShare\": 8253.974247236407,\n      \"expectedShare\": 6564.934250481002,\n      \"issues\": [\n        {\n          \"name\": \"COMPLEX_INSTRUMENT_APP_TEST_REQUIRED\",\n          \"severity\": \"IRREVERSIBLE\"\n        },\n        {\n          \"name\": \"MAX_POSITION_SIZE_REACHED\",\n          \"severity\": \"REVERSIBLE\"\n        }\n      ],\n      \"ownedQuantity\": 9689.87665418884,\n      \"result\": {\n        \"priceAvgInvestedValue\": 9368.02982266256,\n        \"priceAvgResult\": 5465.357706445243,\n        \"priceAvgResultCoef\": 1687.1224766961468,\n        \"priceAvgValue\": 9807.391653931407\n      },\n      \"ticker\": \"string\"\n    },\n    {\n      \"currentShare\": 510.0008073772067,\n      \"expectedShare\": 7693.883779439833,\n      \"issues\": [\n        {\n          \"name\": \"COMPLEX_INSTRUMENT_APP_TEST_REQUIRED\",\n          \"severity\": \"INFORMATIVE\"\n        },\n        {\n          \"name\": \"MAX_POSITION_SIZE_REACHED\",\n          \"severity\": \"REVERSIBLE\"\n        }\n      ],\n      \"ownedQuantity\": 2126.027644953481,\n      \"result\": {\n        \"priceAvgInvestedValue\": 9200.963023705444,\n        \"priceAvgResult\": 5434.527103581418,\n        \"priceAvgResultCoef\": 1378.5790269711263,\n        \"priceAvgValue\": 9908.698629422155\n      },\n      \"ticker\": \"string\"\n    }\n  ],\n  \"settings\": {\n    \"creationDate\": \"2023-03-21T21:31:35.632Z\",\n    \"dividendCashAction\": \"REINVEST\",\n    \"endDate\": \"1956-05-07T04:19:08.356Z\",\n    \"goal\": 4552.886003213473,\n    \"icon\": \"string\",\n    \"id\": 4217,\n    \"initialInvestment\": 1308.5846758154828,\n    \"instrumentShares\": {\n      \"key_0\": 3078.833491005708\n    },\n    \"name\": \"string\",\n    \"publicUrl\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "552ad7ab-649b-449b-a1c3-9474d2d825f1",
+              "name": "Bad update request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5855ab87-a79b-4125-bad4-d325908e3a1e",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1b7b44cc-57b6-4c2b-881b-43a5b83a73f0",
+              "name": "Scope( pies:write ) missing for API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4ab421cd-e5a8-481b-beab-0cb7682c6d74",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "84e87362-2cfa-49a1-b31f-ba3609523083",
+              "name": "Limited: 1 / 5s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dividendCashAction\": \"<string>\",\n  \"endDate\": \"<dateTime>\",\n  \"goal\": \"<number>\",\n  \"icon\": \"<string>\",\n  \"instrumentShares\": {\n    \"AAPL_US_EQ\": 0.5,\n    \"MSFT_US_EQ\": 0.5\n  },\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "004eb70e-6d4a-4b52-ad80-d27018f77e3e",
+          "name": "Duplicate pie",
+          "request": {
+            "name": "Duplicate pie",
+            "description": {
+              "content": "Duplicates a pie for the account \n\n**Rate limit:** 1 req / 5s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "pies",
+                ":id",
+                "duplicate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"icon\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "de7c3541-3fb1-40d7-9856-b27ca748ddd9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"icon\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instruments\": [\n    {\n      \"currentShare\": 8253.974247236407,\n      \"expectedShare\": 6564.934250481002,\n      \"issues\": [\n        {\n          \"name\": \"COMPLEX_INSTRUMENT_APP_TEST_REQUIRED\",\n          \"severity\": \"IRREVERSIBLE\"\n        },\n        {\n          \"name\": \"MAX_POSITION_SIZE_REACHED\",\n          \"severity\": \"REVERSIBLE\"\n        }\n      ],\n      \"ownedQuantity\": 9689.87665418884,\n      \"result\": {\n        \"priceAvgInvestedValue\": 9368.02982266256,\n        \"priceAvgResult\": 5465.357706445243,\n        \"priceAvgResultCoef\": 1687.1224766961468,\n        \"priceAvgValue\": 9807.391653931407\n      },\n      \"ticker\": \"string\"\n    },\n    {\n      \"currentShare\": 510.0008073772067,\n      \"expectedShare\": 7693.883779439833,\n      \"issues\": [\n        {\n          \"name\": \"COMPLEX_INSTRUMENT_APP_TEST_REQUIRED\",\n          \"severity\": \"INFORMATIVE\"\n        },\n        {\n          \"name\": \"MAX_POSITION_SIZE_REACHED\",\n          \"severity\": \"REVERSIBLE\"\n        }\n      ],\n      \"ownedQuantity\": 2126.027644953481,\n      \"result\": {\n        \"priceAvgInvestedValue\": 9200.963023705444,\n        \"priceAvgResult\": 5434.527103581418,\n        \"priceAvgResultCoef\": 1378.5790269711263,\n        \"priceAvgValue\": 9908.698629422155\n      },\n      \"ticker\": \"string\"\n    }\n  ],\n  \"settings\": {\n    \"creationDate\": \"2023-03-21T21:31:35.632Z\",\n    \"dividendCashAction\": \"REINVEST\",\n    \"endDate\": \"1956-05-07T04:19:08.356Z\",\n    \"goal\": 4552.886003213473,\n    \"icon\": \"string\",\n    \"id\": 4217,\n    \"initialInvestment\": 1308.5846758154828,\n    \"instrumentShares\": {\n      \"key_0\": 3078.833491005708\n    },\n    \"name\": \"string\",\n    \"publicUrl\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7da371d-1161-4671-8577-f6dbf1e3f9f0",
+              "name": "Bad update request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"icon\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e9fd7f2d-82ad-4403-af64-b54fa401c23e",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"icon\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "80b87155-e687-4dc7-ae4b-f4b1b50bc783",
+              "name": "Scope( pies:write ) missing for API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"icon\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "77d5071c-83b5-4d63-97ec-17a8655f7953",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"icon\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "74640ab1-6a44-401f-80e9-6326332d1110",
+              "name": "Limited: 1 / 5s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "pies",
+                    ":id",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"icon\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://demo.trading212.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7e157ff5-27c7-48a0-89f3-d76c4f43969b",
+    "name": "Trading 212 Public Accounts Pies (Deprecated) API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to the official API reference for the Trading 212 Public API! This\nguide provides all the information you need to start building your own\ntrading applications and integrations.\n\n\n---\n\n# General Information\n\nThis API is currently in **beta** and is under active development. We're\ncontinuously adding new features and improvements, and we welcome your\nfeedback.\n\n\n### Only for Invest and Stocks ISA\n\nThe API described here is enabled and usable only for **Invest and Stocks ISA** account types.\n\n\n\n### API Environments\n\nWe provide two distinct environments for development and trading:\n\n* **Paper Trading (Demo):** `https://demo.trading212.com/api/v0`\n\n* **Live Trading (Real Money):** `https://live.trading212.com/api/v0`\n\nYou can test your applications extensively in the paper trading environment\nwithout risking real funds before moving to live trading.\n\n### ⚠️ API Limitations\n\nPlease be aware of the following limitations for any order placement:\n\n* **Supported account types:**  The Trading 212 Public API is enabled and\n  usable only for **Invest and Stocks ISA** account types.\n\n* **Order execution:** Orders can be executed only in the **primary account\n  currency**\n\n* **Multi-currency:** Multi-currency accounts are not currently supported\n  through the API. Meaning your account, position and result values in the\n  responses will be in the primary account currency.\n\n### Key Concepts\n\n* **Authentication:** Every request to the API must be authenticated using a\n  secure key pair. See the **Authentication** section below for details.\n\n* **Rate Limiting:** All API calls are subject to rate limits to ensure fair\n  usage and stability. See the **Rate Limiting** section for a full\n  explanation.\n\n* **IP Restrictions:** For enhanced security, you can optionally restrict\n  your API keys to a specific set of IP addresses from within your Trading 212\n  account settings.\n\n* **Selling Orders:** To execute a sell order, you must provide a\n  **negative** value for the `quantity` parameter (e.g., `-10.5`). This is a\n  core convention of the API.\n\n---\n\n## Quickstart\n\nThis simple example shows you how to retrieve your account summary.\n\nFirst, you must generate your API keys from within the Trading 212 app. For\ndetailed instructions, please visit our Help Centre:\n\n* [**How to get your Trading 212 API\n  key**](https://helpcentre.trading212.com/hc/en-us/articles/14584770928157-Trading-212-API-key)\n\nOnce you have your **API Key** and **API Secret**, you can make your first\ncall using `cURL`:\n\n```bash\n\n# Step 1: Replace with your actual credentials and Base64-encode them.\n\n# The `-n` is important as it prevents adding a newline character.\n\nCREDENTIALS=$(echo -n \"<YOUR_API_KEY>:<YOUR_API_SECRET>\" | base64)\n\n\n# Step 2: Make the API call to the live environment using the encoded\ncredentials.\n\ncurl -X GET \"https://live.trading212.com/api/v0/equity/account/summary\" \\\n -H \"Authorization: Basic $CREDENTIALS\"\n```\n\n---\n\n# Authentication\n\nThe API uses a secure key pair for authentication on every request. You must\nprovide your **API Key** as the username and your **API Secret** as the\npassword, formatted as an HTTP Basic Authentication header.\n\nThe `Authorization` header is constructed by Base64-encoding your\n`API_KEY:API_SECRET` string and prepending it with `Basic `.\n\n### Building the Authorization Header\n\nHere are examples of how to generate the required value in different\nenvironments.\n\n**Linux or macOS (Terminal)**\n\nYou can use the `echo` and `base64` commands. Remember to use the `-n` flag\nwith `echo` to prevent it from adding a trailing newline, which would\ninvalidate the credential string.\n\n```bash\n\n# This command outputs the required Base64-encoded string for your header.\n\necho -n \"<YOUR_API_KEY>:<YOUR_API_SECRET>\" | base64\n\n```\n\n**Python**\n\nThis simple snippet shows how to generate the full header value.\n\n```python\n\nimport base64\n\n\n# 1. Your credentials\n\napi_key = \"<YOUR_API_KEY>\"\n\napi_secret = \"<YOUR_API_SECRET>\"\n\n\n# 2. Combine them into a single string\n\ncredentials_string = f\"{api_key}:{api_secret}\"\n\n\n# 3. Encode the string to bytes, then Base64 encode it\n\nencoded_credentials =\nbase64.b64encode(credentials_string.encode('utf-8')).decode('utf-8')\n\n\n# 4. The final header value\n\nauth_header = f\"Basic {encoded_credentials}\"\n\n\nprint(auth_header)\n\n```\n\n---\n\n# Rate Limiting\n\nTo ensure high performance and fair access for all users, all API endpoints\nare subject to rate limiting.\n\n\n> **IMPORTANT NOTE:** All rate limits are applied on a per-account basis,\n> regardless of which API key is used or which IP address the request\n> originates from.\n\n\nSpecific rate limits are detailed in the reference for each endpoint.\n\n### Response Headers\n\nEvery API response includes the following headers to help you manage your\nrequest frequency and avoid hitting limits.\n\n* `x-ratelimit-limit`: The total number of requests allowed in the current\n  time period.\n\n* `x-ratelimit-period`: The duration of the time period in seconds.\n\n* `x-ratelimit-remaining`: The number of requests you have left in the\n  current period.\n\n* `x-ratelimit-reset`: A Unix timestamp indicating the exact time when the\n  limit will be fully reset.\n\n* `x-ratelimit-used`: The number of requests you have already made in the\n  current period.\n\n### How It Works\n\nThe rate limiter allows for requests to be made in bursts. For example, an\nendpoint with a limit of `50 requests per 1 minute` does **not** strictly\nmean you can only make one request every 1.2 seconds. Instead, you could:\n\n* Make a burst of all 50 requests in the first 5 seconds of a minute. You\n  would then need to wait for the reset time indicated by the\n  `x-ratelimit-reset` header before making more requests.\n\n* Pace your requests evenly, for example, by making one call every 1.2\n  seconds, ensuring you always stay within the limit.\n\n### Function-Specific Limits\n\nIn addition to the general rate limits on HTTP calls, some actions have\ntheir own functional limits. For example, there is a maximum of **50 pending\norders** allowed per ticker, per account.\n\n# Pagination\n\nAll list endpoints in the API that return a collection of items (such as historical orders, dividends, and transactions) use **cursor-based pagination** to handle large data sets.\n\n### Parameters\n\n* **`limit`** (integer): Specifies the maximum number of items to return in a single request.\n  * **Default:** 20\n  * **Maximum:** 50\n* **`cursor`** (string | number): A pointer to a specific item in the dataset. This tells the API where to start the next page of results.\n\n### How to Paginate\n\nThe easiest way to paginate is by using the `nextPagePath` field returned in the response.\n\n1.  Make your initial request to a list endpoint (e.g., `/api/v0/equity/history/orders`) with an optional `limit` parameter. Do not include a `cursor`.\n2.  The API will return a response object. This object will contain a list of `items` and a `nextPagePath` field.\n3.  If the `nextPagePath` field is `null`, you have reached the end of the data, and there are no more pages.\n4.  If `nextPagePath` is not `null`, **use the entire string value of `nextPagePath`** as the path for your next request. This string contains all the necessary parameters (like `limit` and `cursor`) to get the next page.\n5.  Repeat this process until `nextPagePath` is `null`.\n\n### Example\n\nHere is a step-by-step example of fetching all transactions, 2 at a time.\n\n**Request 1: Get the first page**\n```bash\ncurl -X GET \"https://demo.trading212.com/api/v0/equity/history/orders?limit=2\" \\\n     -u \"API_KEY:API_SECRET\"\n```\n**Response 1: Note the nextPagePath**\n```json\n{\n  \"items\": [\n    { \"id\": 987654321, \"ticker\": \"AAPL_US_EQ\", ... },\n    { \"id\": 987654320, \"ticker\": \"MSFT_US_EQ\", ... }\n  ],\n  \"nextPagePath\": \"/api/v0/equity/history/orders?limit=2&cursor=1760346100000\"\n}\n```\n**Request 2: Use the full nextPagePath for the next request**\n```bash\ncurl -X GET \"https://demo.trading212.com/api/v0/equity/history/orders?limit=2&cursor=1760346100000\" \\\n     -u \"API_KEY:API_SECRET\"\n```\n**Response 2: Get the next page (and a new nextPagePath)**\n```json\n{\n  \"items\": [\n    { \"id\": 987654319, \"ticker\": \"AAPL_US_EQ\", ... },\n    { \"id\": 987654320, \"987654318\": \"MSFT_US_EQ\", ... }\n  ],\n  \"nextPagePath\": \"/api/v0/equity/history/orders?limit=2&cursor=1660015723000\"\n}\n```\n**Request 3: Get the final page**\n```bash\ncurl -X GET \"https://demo.trading212.com/api/v0/equity/history/orders?limit=2&cursor=1660015723000\" \\\n     -u \"API_KEY:API_SECRET\"\n```\nResponse 3: nextPagePath is null, indicating the end\n```json\n{\n  \"items\": [\n    { \"id\": 987654317, \"ticker\": \"AMZN_US_EQ\", ... }\n  ],\n  \"nextPagePath\": null\n}\n```\n\n---\n\n# Useful Links\n\nHere are some additional resources that you may find helpful.\n\n* [**Trading 212 API\n  Terms**](https://www.trading212.com/legal-documentation/API-Terms_EN.pdf)\n\n* [**Trading 212 Community Forum**](https://community.trading212.com/) - A\n  great place to ask questions and share what you've built.\n",
+      "type": "text/plain"
+    }
+  }
+}

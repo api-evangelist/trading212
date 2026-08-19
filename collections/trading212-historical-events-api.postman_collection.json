@@ -1,0 +1,1949 @@
+{
+  "item": [
+    {
+      "id": "21fcea91-ecec-4839-8850-ac3cdbf86f88",
+      "name": "Historical events",
+      "description": {
+        "content": "Review your account's trading history. Access detailed records of past\norders, dividend payments, and cash transactions, or generate downloadable\nCSV reports for analysis and record-keeping.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1837fbe6-8c59-4e97-9334-62d46c1e0104",
+          "name": "Get paid out dividends",
+          "request": {
+            "name": "Get paid out dividends",
+            "description": {
+              "content": "\n\n**Rate limit:** 6 req / 1m0s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "history",
+                "dividends"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<long>",
+                  "description": "Pagination cursor"
+                },
+                {
+                  "disabled": false,
+                  "key": "ticker",
+                  "value": "<string>",
+                  "description": "Ticker filter"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Max items: 50"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "459f9385-168f-49ab-8f39-d09809f9fa4d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "dividends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"amount\": 9840.038764668672,\n      \"amountInEuro\": 7699.407615201258,\n      \"currency\": \"string\",\n      \"grossAmountPerShare\": 7798.474660709499,\n      \"instrument\": {\n        \"currency\": \"string\",\n        \"isin\": \"string\",\n        \"name\": \"string\",\n        \"ticker\": \"AAPL_US_EQ\"\n      },\n      \"paidOn\": \"2024-10-11T05:03:28.911Z\",\n      \"quantity\": 136.04455930659952,\n      \"reference\": \"string\",\n      \"ticker\": \"string\",\n      \"tickerCurrency\": \"string\",\n      \"type\": \"PROPERTY_INCOME_DISTRIBUTION\"\n    },\n    {\n      \"amount\": 7661.807111178398,\n      \"amountInEuro\": 7811.5576034844835,\n      \"currency\": \"string\",\n      \"grossAmountPerShare\": 9786.53327441793,\n      \"instrument\": {\n        \"currency\": \"string\",\n        \"isin\": \"string\",\n        \"name\": \"string\",\n        \"ticker\": \"AAPL_US_EQ\"\n      },\n      \"paidOn\": \"1954-01-20T21:37:37.110Z\",\n      \"quantity\": 6505.357383672345,\n      \"reference\": \"string\",\n      \"ticker\": \"string\",\n      \"tickerCurrency\": \"string\",\n      \"type\": \"SHORT_TERM_CAPITAL_GAINS\"\n    }\n  ],\n  \"nextPagePath\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "365c7d80-14b3-4051-98a8-7629afb9dd20",
+              "name": "Bad filtering arguments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "dividends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cfeb5abf-9898-4067-b9db-4ee1235ab165",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "dividends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3faea6f9-440e-43ad-a1e7-e2ba3df39cb9",
+              "name": "Scope( history:dividends ) missing for API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "dividends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76df79f4-9df0-45c5-a939-1935f56cae85",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "dividends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d09dac3a-aa78-4c5f-9e08-e7c4e3dfe061",
+              "name": "Limited: 6 / 1m0s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "dividends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6778055-4218-472d-8c7a-c1fd387d35a9",
+          "name": "List generated reports",
+          "request": {
+            "name": "List generated reports",
+            "description": {
+              "content": "Retrieves a list of all requested CSV reports and their current status. \n\n\n**Asynchronous Workflow:**\n\n1. Call `POST /history/exports` to request a report. You will receive a\n`reportId`.\n\n2. Periodically call this endpoint (`GET /history/exports`) to check the\n`status` of the report corresponding to your `reportId`.\n\n3. Once the status is `Finished`, the `downloadLink` field will contain\na URL to download the CSV file.\n\n**Rate limit:** 1 req / 1m0s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "history",
+                "exports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "63fae5ae-6fb4-481c-8c78-ca707a7275ba",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"dataIncluded\": {\n      \"includeDividends\": true,\n      \"includeInterest\": false,\n      \"includeOrders\": false,\n      \"includeTransactions\": true\n    },\n    \"downloadLink\": \"string\",\n    \"reportId\": 4619,\n    \"status\": \"Canceled\",\n    \"timeFrom\": \"2014-02-28T23:35:36.899Z\",\n    \"timeTo\": \"2003-08-04T17:47:50.634Z\"\n  },\n  {\n    \"dataIncluded\": {\n      \"includeDividends\": false,\n      \"includeInterest\": true,\n      \"includeOrders\": false,\n      \"includeTransactions\": false\n    },\n    \"downloadLink\": \"string\",\n    \"reportId\": 1962,\n    \"status\": \"Queued\",\n    \"timeFrom\": \"1983-11-22T18:00:23.512Z\",\n    \"timeTo\": \"2010-01-24T17:19:36.728Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1121538d-8597-4001-8a2c-a408ab4b2219",
+              "name": "Bad filtering arguments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "679a5792-39c9-43a2-9a4a-3beac4a9feba",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4cf83ed7-7060-4b12-b6a5-44b076993e20",
+              "name": "Missing Permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "be67e388-7718-48c6-9ed9-0e2b706b2dba",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "26d12a53-5d2a-493a-ad30-39ef16fb0553",
+              "name": "Limited: 1 / 1m0s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f2a09dd-ce17-4530-a709-422731b5d85c",
+          "name": "Request a CSV report",
+          "request": {
+            "name": "Request a CSV report",
+            "description": {
+              "content": "Initiates the generation of a CSV report containing historical account\ndata. This is an asynchronous operation. The response will include a\n`reportId` which you can use to track the status of the generation\nprocess using the `GET /history/exports` endpoint.\n\n**Rate limit:** 1 req / 30s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "history",
+                "exports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataIncluded\": {\n    \"includeDividends\": \"<boolean>\",\n    \"includeInterest\": \"<boolean>\",\n    \"includeOrders\": \"<boolean>\",\n    \"includeTransactions\": \"<boolean>\"\n  },\n  \"timeFrom\": \"<dateTime>\",\n  \"timeTo\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "33b7a875-c52d-44b5-9b29-f29587044a80",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataIncluded\": {\n    \"includeDividends\": \"<boolean>\",\n    \"includeInterest\": \"<boolean>\",\n    \"includeOrders\": \"<boolean>\",\n    \"includeTransactions\": \"<boolean>\"\n  },\n  \"timeFrom\": \"<dateTime>\",\n  \"timeTo\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reportId\": 8861\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5767494d-fdfc-4a93-a13c-f69ff8295839",
+              "name": "Bad filtering arguments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataIncluded\": {\n    \"includeDividends\": \"<boolean>\",\n    \"includeInterest\": \"<boolean>\",\n    \"includeOrders\": \"<boolean>\",\n    \"includeTransactions\": \"<boolean>\"\n  },\n  \"timeFrom\": \"<dateTime>\",\n  \"timeTo\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f9e8e34a-4371-4683-8026-37d03bc9f28f",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataIncluded\": {\n    \"includeDividends\": \"<boolean>\",\n    \"includeInterest\": \"<boolean>\",\n    \"includeOrders\": \"<boolean>\",\n    \"includeTransactions\": \"<boolean>\"\n  },\n  \"timeFrom\": \"<dateTime>\",\n  \"timeTo\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5a2870d6-21ce-495f-9175-146b9917bd80",
+              "name": "Missing Permissions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataIncluded\": {\n    \"includeDividends\": \"<boolean>\",\n    \"includeInterest\": \"<boolean>\",\n    \"includeOrders\": \"<boolean>\",\n    \"includeTransactions\": \"<boolean>\"\n  },\n  \"timeFrom\": \"<dateTime>\",\n  \"timeTo\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "052a4afa-bde9-4a76-82d3-8120104210db",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataIncluded\": {\n    \"includeDividends\": \"<boolean>\",\n    \"includeInterest\": \"<boolean>\",\n    \"includeOrders\": \"<boolean>\",\n    \"includeTransactions\": \"<boolean>\"\n  },\n  \"timeFrom\": \"<dateTime>\",\n  \"timeTo\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f78b720a-9894-45f0-bebd-b83afabf8473",
+              "name": "Limited: 1 / 30s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "exports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataIncluded\": {\n    \"includeDividends\": \"<boolean>\",\n    \"includeInterest\": \"<boolean>\",\n    \"includeOrders\": \"<boolean>\",\n    \"includeTransactions\": \"<boolean>\"\n  },\n  \"timeFrom\": \"<dateTime>\",\n  \"timeTo\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d6debc0-9be4-48f3-994b-391b69c20b79",
+          "name": "Get historical orders data",
+          "request": {
+            "name": "Get historical orders data",
+            "description": {
+              "content": "\n\n**Rate limit:** 6 req / 1m0s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "history",
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<long>",
+                  "description": "Pagination cursor"
+                },
+                {
+                  "disabled": false,
+                  "key": "ticker",
+                  "value": "<string>",
+                  "description": "Ticker filter"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Max items: 50"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9b3da000-cad3-48fd-ae44-721b9ace33d7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"fill\": {\n        \"filledAt\": \"2001-10-24T22:39:56.430Z\",\n        \"id\": 5220,\n        \"price\": 735.4859344228282,\n        \"quantity\": 3115.8178627649036,\n        \"tradingMethod\": \"TOTV\",\n        \"type\": \"FOP_CORRECTION\",\n        \"walletImpact\": {\n          \"currency\": \"string\",\n          \"fxRate\": 3411.7534862282205,\n          \"netValue\": 1668.049632014973,\n          \"realisedProfitLoss\": 8355.301752567497,\n          \"taxes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      \"order\": {\n        \"createdAt\": \"1954-04-01T10:02:24.716Z\",\n        \"currency\": \"string\",\n        \"extendedHours\": false,\n        \"filledQuantity\": 756.968940551056,\n        \"filledValue\": 3538.5543859301506,\n        \"id\": 284,\n        \"initiatedFrom\": \"INSTRUMENT_AUTOINVEST\",\n        \"instrument\": {\n          \"currency\": \"string\",\n          \"isin\": \"string\",\n          \"name\": \"string\",\n          \"ticker\": \"AAPL_US_EQ\"\n        },\n        \"limitPrice\": 4155.213130539797,\n        \"quantity\": 1078.103777078231,\n        \"side\": \"BUY\",\n        \"status\": \"CANCELLING\",\n        \"stopPrice\": 238.54922187626303,\n        \"strategy\": \"QUANTITY\",\n        \"ticker\": \"AAPL_US_EQ\",\n        \"timeInForce\": \"DAY\",\n        \"type\": \"MARKET\",\n        \"value\": 1044.902888804098\n      }\n    },\n    {\n      \"fill\": {\n        \"filledAt\": \"1970-12-20T09:48:19.940Z\",\n        \"id\": 852,\n        \"price\": 520.4066026984344,\n        \"quantity\": 2670.953693598903,\n        \"tradingMethod\": \"TOTV\",\n        \"type\": \"EQUITY_RIGHTS\",\n        \"walletImpact\": {\n          \"currency\": \"string\",\n          \"fxRate\": 5819.9695924065545,\n          \"netValue\": 9253.973334158409,\n          \"realisedProfitLoss\": 3885.990408203476,\n          \"taxes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      },\n      \"order\": {\n        \"createdAt\": \"1978-05-04T18:57:07.554Z\",\n        \"currency\": \"string\",\n        \"extendedHours\": false,\n        \"filledQuantity\": 1607.0250999731838,\n        \"filledValue\": 1557.340645553038,\n        \"id\": 1863,\n        \"initiatedFrom\": \"AUTOINVEST\",\n        \"instrument\": {\n          \"currency\": \"string\",\n          \"isin\": \"string\",\n          \"name\": \"string\",\n          \"ticker\": \"AAPL_US_EQ\"\n        },\n        \"limitPrice\": 2538.2636974156358,\n        \"quantity\": 9343.152552125446,\n        \"side\": \"BUY\",\n        \"status\": \"REPLACED\",\n        \"stopPrice\": 5078.036879394727,\n        \"strategy\": \"QUANTITY\",\n        \"ticker\": \"AAPL_US_EQ\",\n        \"timeInForce\": \"GOOD_TILL_CANCEL\",\n        \"type\": \"STOP\",\n        \"value\": 886.4689026915373\n      }\n    }\n  ],\n  \"nextPagePath\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "431b25b8-b3a4-4554-948b-d105e2526bbb",
+              "name": "Bad filtering arguments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f61cb6b9-327a-40ae-a52d-819466b1381b",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "79553a3f-fb4d-4ef2-bbb0-d24179d8d15c",
+              "name": "Scope( history:orders ) missing for API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5f694d77-7bee-40cf-bf66-c54ad41d2781",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ea93cef4-e690-400e-8b15-7a75ebff536d",
+              "name": "Limited: 6 / 1m0s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "ticker",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d1ed7fe-01bd-4470-8605-7e9ad286051b",
+          "name": "Get transactions",
+          "request": {
+            "name": "Get transactions",
+            "description": {
+              "content": "Fetch superficial information about movements to and from your account\n\n**Rate limit:** 6 req / 1m0s",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v0",
+                "equity",
+                "history",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<string>",
+                  "description": "Pagination cursor"
+                },
+                {
+                  "disabled": false,
+                  "key": "time",
+                  "value": "<dateTime>",
+                  "description": "Retrieve transactions starting from the specified time"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Max items: 50"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cc0e20ab-8473-4195-9419-95fce0decf5a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"amount\": 4958.445647091358,\n      \"currency\": \"string\",\n      \"dateTime\": \"1947-03-11T13:15:36.167Z\",\n      \"reference\": \"string\",\n      \"type\": \"DEPOSIT\"\n    },\n    {\n      \"amount\": 8915.271978037834,\n      \"currency\": \"string\",\n      \"dateTime\": \"1958-04-17T11:03:31.347Z\",\n      \"reference\": \"string\",\n      \"type\": \"FEE\"\n    }\n  ],\n  \"nextPagePath\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4209cd18-457a-4ece-bced-fc2e63ac4a07",
+              "name": "Bad filtering arguments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "230a877b-4e1b-4c6a-94ef-cb17879d0f3a",
+              "name": "Bad API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9549009e-8e6a-4f46-99fa-d7d46303e734",
+              "name": "Scope( history:transactions ) missing for API key",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "51da1952-ff69-4535-b908-4af29c8d30fa",
+              "name": "Timed-out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d5de1ba8-8044-44cf-92ff-3717c1412cf9",
+              "name": "Limited: 6 / 1m0s",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v0",
+                    "equity",
+                    "history",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cursor",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "21"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://demo.trading212.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "89dc946f-21c3-42da-9056-7478cada0e20",
+    "name": "Trading 212 Public Accounts Historical events API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Welcome to the official API reference for the Trading 212 Public API! This\nguide provides all the information you need to start building your own\ntrading applications and integrations.\n\n\n---\n\n# General Information\n\nThis API is currently in **beta** and is under active development. We're\ncontinuously adding new features and improvements, and we welcome your\nfeedback.\n\n\n### Only for Invest and Stocks ISA\n\nThe API described here is enabled and usable only for **Invest and Stocks ISA** account types.\n\n\n\n### API Environments\n\nWe provide two distinct environments for development and trading:\n\n* **Paper Trading (Demo):** `https://demo.trading212.com/api/v0`\n\n* **Live Trading (Real Money):** `https://live.trading212.com/api/v0`\n\nYou can test your applications extensively in the paper trading environment\nwithout risking real funds before moving to live trading.\n\n### ⚠️ API Limitations\n\nPlease be aware of the following limitations for any order placement:\n\n* **Supported account types:**  The Trading 212 Public API is enabled and\n  usable only for **Invest and Stocks ISA** account types.\n\n* **Order execution:** Orders can be executed only in the **primary account\n  currency**\n\n* **Multi-currency:** Multi-currency accounts are not currently supported\n  through the API. Meaning your account, position and result values in the\n  responses will be in the primary account currency.\n\n### Key Concepts\n\n* **Authentication:** Every request to the API must be authenticated using a\n  secure key pair. See the **Authentication** section below for details.\n\n* **Rate Limiting:** All API calls are subject to rate limits to ensure fair\n  usage and stability. See the **Rate Limiting** section for a full\n  explanation.\n\n* **IP Restrictions:** For enhanced security, you can optionally restrict\n  your API keys to a specific set of IP addresses from within your Trading 212\n  account settings.\n\n* **Selling Orders:** To execute a sell order, you must provide a\n  **negative** value for the `quantity` parameter (e.g., `-10.5`). This is a\n  core convention of the API.\n\n---\n\n## Quickstart\n\nThis simple example shows you how to retrieve your account summary.\n\nFirst, you must generate your API keys from within the Trading 212 app. For\ndetailed instructions, please visit our Help Centre:\n\n* [**How to get your Trading 212 API\n  key**](https://helpcentre.trading212.com/hc/en-us/articles/14584770928157-Trading-212-API-key)\n\nOnce you have your **API Key** and **API Secret**, you can make your first\ncall using `cURL`:\n\n```bash\n\n# Step 1: Replace with your actual credentials and Base64-encode them.\n\n# The `-n` is important as it prevents adding a newline character.\n\nCREDENTIALS=$(echo -n \"<YOUR_API_KEY>:<YOUR_API_SECRET>\" | base64)\n\n\n# Step 2: Make the API call to the live environment using the encoded\ncredentials.\n\ncurl -X GET \"https://live.trading212.com/api/v0/equity/account/summary\" \\\n -H \"Authorization: Basic $CREDENTIALS\"\n```\n\n---\n\n# Authentication\n\nThe API uses a secure key pair for authentication on every request. You must\nprovide your **API Key** as the username and your **API Secret** as the\npassword, formatted as an HTTP Basic Authentication header.\n\nThe `Authorization` header is constructed by Base64-encoding your\n`API_KEY:API_SECRET` string and prepending it with `Basic `.\n\n### Building the Authorization Header\n\nHere are examples of how to generate the required value in different\nenvironments.\n\n**Linux or macOS (Terminal)**\n\nYou can use the `echo` and `base64` commands. Remember to use the `-n` flag\nwith `echo` to prevent it from adding a trailing newline, which would\ninvalidate the credential string.\n\n```bash\n\n# This command outputs the required Base64-encoded string for your header.\n\necho -n \"<YOUR_API_KEY>:<YOUR_API_SECRET>\" | base64\n\n```\n\n**Python**\n\nThis simple snippet shows how to generate the full header value.\n\n```python\n\nimport base64\n\n\n# 1. Your credentials\n\napi_key = \"<YOUR_API_KEY>\"\n\napi_secret = \"<YOUR_API_SECRET>\"\n\n\n# 2. Combine them into a single string\n\ncredentials_string = f\"{api_key}:{api_secret}\"\n\n\n# 3. Encode the string to bytes, then Base64 encode it\n\nencoded_credentials =\nbase64.b64encode(credentials_string.encode('utf-8')).decode('utf-8')\n\n\n# 4. The final header value\n\nauth_header = f\"Basic {encoded_credentials}\"\n\n\nprint(auth_header)\n\n```\n\n---\n\n# Rate Limiting\n\nTo ensure high performance and fair access for all users, all API endpoints\nare subject to rate limiting.\n\n\n> **IMPORTANT NOTE:** All rate limits are applied on a per-account basis,\n> regardless of which API key is used or which IP address the request\n> originates from.\n\n\nSpecific rate limits are detailed in the reference for each endpoint.\n\n### Response Headers\n\nEvery API response includes the following headers to help you manage your\nrequest frequency and avoid hitting limits.\n\n* `x-ratelimit-limit`: The total number of requests allowed in the current\n  time period.\n\n* `x-ratelimit-period`: The duration of the time period in seconds.\n\n* `x-ratelimit-remaining`: The number of requests you have left in the\n  current period.\n\n* `x-ratelimit-reset`: A Unix timestamp indicating the exact time when the\n  limit will be fully reset.\n\n* `x-ratelimit-used`: The number of requests you have already made in the\n  current period.\n\n### How It Works\n\nThe rate limiter allows for requests to be made in bursts. For example, an\nendpoint with a limit of `50 requests per 1 minute` does **not** strictly\nmean you can only make one request every 1.2 seconds. Instead, you could:\n\n* Make a burst of all 50 requests in the first 5 seconds of a minute. You\n  would then need to wait for the reset time indicated by the\n  `x-ratelimit-reset` header before making more requests.\n\n* Pace your requests evenly, for example, by making one call every 1.2\n  seconds, ensuring you always stay within the limit.\n\n### Function-Specific Limits\n\nIn addition to the general rate limits on HTTP calls, some actions have\ntheir own functional limits. For example, there is a maximum of **50 pending\norders** allowed per ticker, per account.\n\n# Pagination\n\nAll list endpoints in the API that return a collection of items (such as historical orders, dividends, and transactions) use **cursor-based pagination** to handle large data sets.\n\n### Parameters\n\n* **`limit`** (integer): Specifies the maximum number of items to return in a single request.\n  * **Default:** 20\n  * **Maximum:** 50\n* **`cursor`** (string | number): A pointer to a specific item in the dataset. This tells the API where to start the next page of results.\n\n### How to Paginate\n\nThe easiest way to paginate is by using the `nextPagePath` field returned in the response.\n\n1.  Make your initial request to a list endpoint (e.g., `/api/v0/equity/history/orders`) with an optional `limit` parameter. Do not include a `cursor`.\n2.  The API will return a response object. This object will contain a list of `items` and a `nextPagePath` field.\n3.  If the `nextPagePath` field is `null`, you have reached the end of the data, and there are no more pages.\n4.  If `nextPagePath` is not `null`, **use the entire string value of `nextPagePath`** as the path for your next request. This string contains all the necessary parameters (like `limit` and `cursor`) to get the next page.\n5.  Repeat this process until `nextPagePath` is `null`.\n\n### Example\n\nHere is a step-by-step example of fetching all transactions, 2 at a time.\n\n**Request 1: Get the first page**\n```bash\ncurl -X GET \"https://demo.trading212.com/api/v0/equity/history/orders?limit=2\" \\\n     -u \"API_KEY:API_SECRET\"\n```\n**Response 1: Note the nextPagePath**\n```json\n{\n  \"items\": [\n    { \"id\": 987654321, \"ticker\": \"AAPL_US_EQ\", ... },\n    { \"id\": 987654320, \"ticker\": \"MSFT_US_EQ\", ... }\n  ],\n  \"nextPagePath\": \"/api/v0/equity/history/orders?limit=2&cursor=1760346100000\"\n}\n```\n**Request 2: Use the full nextPagePath for the next request**\n```bash\ncurl -X GET \"https://demo.trading212.com/api/v0/equity/history/orders?limit=2&cursor=1760346100000\" \\\n     -u \"API_KEY:API_SECRET\"\n```\n**Response 2: Get the next page (and a new nextPagePath)**\n```json\n{\n  \"items\": [\n    { \"id\": 987654319, \"ticker\": \"AAPL_US_EQ\", ... },\n    { \"id\": 987654320, \"987654318\": \"MSFT_US_EQ\", ... }\n  ],\n  \"nextPagePath\": \"/api/v0/equity/history/orders?limit=2&cursor=1660015723000\"\n}\n```\n**Request 3: Get the final page**\n```bash\ncurl -X GET \"https://demo.trading212.com/api/v0/equity/history/orders?limit=2&cursor=1660015723000\" \\\n     -u \"API_KEY:API_SECRET\"\n```\nResponse 3: nextPagePath is null, indicating the end\n```json\n{\n  \"items\": [\n    { \"id\": 987654317, \"ticker\": \"AMZN_US_EQ\", ... }\n  ],\n  \"nextPagePath\": null\n}\n```\n\n---\n\n# Useful Links\n\nHere are some additional resources that you may find helpful.\n\n* [**Trading 212 API\n  Terms**](https://www.trading212.com/legal-documentation/API-Terms_EN.pdf)\n\n* [**Trading 212 Community Forum**](https://community.trading212.com/) - A\n  great place to ask questions and share what you've built.\n",
+      "type": "text/plain"
+    }
+  }
+}

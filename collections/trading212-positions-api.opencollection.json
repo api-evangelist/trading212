@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trading 212 Public Accounts Positions API",
+    "version": "v0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Positions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch all open positions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/positions",
+            "params": [
+              {
+                "name": "ticker",
+                "value": "AAPL_US_EQ",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Fetch all open positions for your account\n\n**Rate limit:** 1 req / 1s"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

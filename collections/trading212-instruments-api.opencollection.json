@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trading 212 Public Accounts Instruments API",
+    "version": "v0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Instruments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get exchanges metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/metadata/exchanges",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Retrieves all accessible exchanges and their corresponding working schedules.\nData is refreshed every 10 minutes.\n\n**Rate limit:** 1 req / 30s"
+        },
+        {
+          "info": {
+            "name": "Get all available instruments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/metadata/instruments",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Retrieves all accessible instruments.\nData is refreshed every 10 minutes.\n\n**Rate limit:** 1 req / 50s"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,154 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trading 212 Public Accounts Pies (Deprecated) API",
+    "version": "v0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pies (Deprecated)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch all pies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/pies",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Fetches all pies for the account\n\n**Rate limit:** 1 req / 30s"
+        },
+        {
+          "info": {
+            "name": "Create pie",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://demo.trading212.com/api/v0/equity/pies",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Creates a pie for the account by given params\n\n**Rate limit:** 1 req / 5s"
+        },
+        {
+          "info": {
+            "name": "Fetch a pie",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/pies/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Fetches a pies for the account with detailed information\n\n**Rate limit:** 1 req / 5s"
+        },
+        {
+          "info": {
+            "name": "Update pie",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://demo.trading212.com/api/v0/equity/pies/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Updates a pie for the account by given params\n\n**Rate limit:** 1 req / 5s"
+        },
+        {
+          "info": {
+            "name": "Delete pie",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://demo.trading212.com/api/v0/equity/pies/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Deletes a pie by given id\n\n**Rate limit:** 1 req / 5s"
+        },
+        {
+          "info": {
+            "name": "Duplicate pie",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://demo.trading212.com/api/v0/equity/pies/:id/duplicate",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Duplicates a pie for the account \n\n**Rate limit:** 1 req / 5s"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

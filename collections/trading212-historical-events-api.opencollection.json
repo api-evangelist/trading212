@@ -1,0 +1,162 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trading 212 Public Accounts Historical events API",
+    "version": "v0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Historical events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get paid out dividends",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/history/dividends",
+            "params": [
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Pagination cursor"
+              },
+              {
+                "name": "ticker",
+                "value": "",
+                "type": "query",
+                "description": "Ticker filter"
+              },
+              {
+                "name": "limit",
+                "value": "21",
+                "type": "query",
+                "description": "Max items: 50"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "\n\n**Rate limit:** 6 req / 1m0s"
+        },
+        {
+          "info": {
+            "name": "List generated reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/history/exports",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Retrieves a list of all requested CSV reports and their current status. \n\n\n**Asynchronous Workflow:**\n\n1. Call `POST /history/exports` to request a report. You will receive a\n`reportId`.\n\n2. Periodically call this endpoint (`GET /history/exports`) to check the\n`status` of the report corresponding to your `reportId`.\n\n3. Once the status is `Finished`, the `downloadLink` field will contain\na URL to download the CSV file.\n\n**Rate limit:** 1 req / 1m0s"
+        },
+        {
+          "info": {
+            "name": "Request a CSV report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://demo.trading212.com/api/v0/equity/history/exports",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Initiates the generation of a CSV report containing historical account\ndata. This is an asynchronous operation. The response will include a\n`reportId` which you can use to track the status of the generation\nprocess using the `GET /history/exports` endpoint.\n\n**Rate limit:** 1 req / 30s"
+        },
+        {
+          "info": {
+            "name": "Get historical orders data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/history/orders",
+            "params": [
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Pagination cursor"
+              },
+              {
+                "name": "ticker",
+                "value": "",
+                "type": "query",
+                "description": "Ticker filter"
+              },
+              {
+                "name": "limit",
+                "value": "21",
+                "type": "query",
+                "description": "Max items: 50"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "\n\n**Rate limit:** 6 req / 1m0s"
+        },
+        {
+          "info": {
+            "name": "Get transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/history/transactions",
+            "params": [
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query",
+                "description": "Pagination cursor"
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "Retrieve transactions starting from the specified time"
+              },
+              {
+                "name": "limit",
+                "value": "21",
+                "type": "query",
+                "description": "Max items: 50"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Fetch superficial information about movements to and from your account\n\n**Rate limit:** 6 req / 1m0s"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,162 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trading 212 Public Accounts Orders API",
+    "version": "v0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all pending orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/orders",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Retrieves a list of all orders that are currently active (i.e., not yet\nfilled, cancelled, or expired). This is useful for monitoring the status\nof your open positions and managing your trading strategy.\n\n**Rate limit:** 1 req / 5s"
+        },
+        {
+          "info": {
+            "name": "Place a Limit order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://demo.trading212.com/api/v0/equity/orders/limit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Creates a new Limit order, which executes at a specified price or\nbetter.\n\n- To place a **buy** order, use a positive `quantity`. The order will\nfill at the `limitPrice` or lower.\n\n- To place a **sell** order, use a negative `quantity`. The order will\nfill at the `limitPrice` or higher.\n\n\n\n**Order Limitations**\n\n* Orders can be executed only in the **main account currency**\n\n\n**Important:** In this beta version, this endpoint is **not\nidempotent**. Sending the same request multiple times may res"
+        },
+        {
+          "info": {
+            "name": "Place a Market order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://demo.trading212.com/api/v0/equity/orders/market",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Creates a new Market order, which is an instruction to trade a security\nimmediately at the next available price. \n\n- To place a **buy** order, use a positive `quantity`. \n\n- To place a **sell** order, use a negative `quantity`.\n\n\n- **`extendedHours`**: Set to `true` to allow the order to be filled\noutside of the standard trading session.\n\n- If placed when the market is closed, the order will be queued to\nexecute when the market next opens.\n\nx\n**Order Limitations**\n\n* Orders can be executed only "
+        },
+        {
+          "info": {
+            "name": "Place a Stop order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://demo.trading212.com/api/v0/equity/orders/stop",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Creates a new Stop order, which places a Market order once the\n`stopPrice` is reached.\n\n- To place a **buy** stop order, use a positive `quantity`.\n\n- To place a **sell** stop order (commonly a 'stop-loss'), use a\nnegative `quantity`.\n\n\n- The `stopPrice` is triggered by the instrument's **Last Traded Price\n(LTP)**.\n\n\n\n\n**Order Limitations**\n\n* Orders can be executed only in the **main account currency**\n\n**Important:** In this beta version, this endpoint is **not\nidempotent**. Sending the same r"
+        },
+        {
+          "info": {
+            "name": "Place a StopLimit order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://demo.trading212.com/api/v0/equity/orders/stop_limit",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Creates a new Stop-Limit order, combining features of a Stop and a Limit\norder. The direction of the trade (buy/sell) is determined by the sign\nof the `quantity` field.\n\n\n**Execution Logic:**\n\n1.  When the instrument's **Last Traded Price (LTP)** reaches the\nspecified `stopPrice`, the order is triggered.\n\n2.  A Limit order is then automatically placed at the specified\n`limitPrice`.\n\n\nThis two-step process helps protect against price slippage that can\noccur with a standard Stop order.\n\n\n**Order L"
+        },
+        {
+          "info": {
+            "name": "Get a pending order by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/orders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the order you want to retrieve."
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Retrieves a single pending order using its unique numerical ID. This is\nuseful for checking the status of a specific order you have previously\nplaced.\n\n**Rate limit:** 1 req / 1s"
+        },
+        {
+          "info": {
+            "name": "Cancel a pending order",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://demo.trading212.com/api/v0/equity/orders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the order you want to cancel."
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Attempts to cancel an active, unfilled order by its unique ID.\nCancellation is not guaranteed if the order is already in the process of\nbeing filled. A successful response indicates the cancellation request\nwas accepted.\n\n**Rate limit:** 50 req / 1m0s"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

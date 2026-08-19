@@ -1,0 +1,34 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Trading 212 Public Accounts API",
+    "version": "v0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get account summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://demo.trading212.com/api/v0/equity/account/summary",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Provides a breakdown of your account's cash and investment metrics,\nincluding available funds, invested capital, and total account value.\n\n**Rate limit:** 1 req / 5s"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
