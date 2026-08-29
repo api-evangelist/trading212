@@ -6,6 +6,18 @@ description: >-
   Invest and Stocks ISA account types and provides both a live trading
   environment and a paper trading (demo) environment for safe development and
   testing.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
