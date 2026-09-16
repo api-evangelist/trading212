@@ -1,11 +1,8 @@
 name: Trading 212
-description: >-
-  Trading 212 is a commission-free investing platform offering a REST API for
-  accessing portfolio data, managing orders, viewing positions, retrieving
-  instrument metadata, and accessing account information. The API supports
-  Invest and Stocks ISA account types and provides both a live trading
-  environment and a paper trading (demo) environment for safe development and
-  testing.
+description: Trading 212 is a commission-free investing platform offering a REST API for accessing portfolio
+  data, managing orders, viewing positions, retrieving instrument metadata, and accessing account information.
+  The API supports Invest and Stocks ISA account types and provides both a live trading environment and
+  a paper trading (demo) environment for safe development and testing.
 deliveryModel:
   model: saas
   open_source: false
@@ -34,24 +31,23 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/trading212.png
 url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/apis.yml
-version: "0.19"
-created: "2026-06-13"
-modified: "2026-06-13"
+version: '0.19'
+created: '2026-06-13'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 tags:
-  - Investing
-  - Finance
-  - Trading
-  - Stocks
-  - Portfolio
-  - Commission-Free
-  - ISA
+- Investing
+- Finance
+- Trading
+- Stocks
+- Portfolio
+- Commission-Free
+- ISA
 apis:
 - aid: trading212:trading212-accounts-api
   name: Trading 212 Accounts API
-  description: >-
-    Access fundamental information about your trading account. Retrieve details such as your account ID,
-    currency, and current cash balance.
+  description: Access fundamental information about your trading account. Retrieve details such as your
+    account ID, currency, and current cash balance.
   humanURL: https://docs.trading212.com/api
   baseURL: https://live.trading212.com/api/v0
   tags:
@@ -68,11 +64,9 @@ apis:
   - type: Examples
     url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/examples/
   - type: Vocabulary
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
   - type: Authentication
     url: https://docs.trading212.com/api/section/authentication
   - type: Environments
@@ -86,22 +80,18 @@ apis:
   - type: Community
     url: https://community.trading212.com/
   - type: Plans
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
   - type: RateLimits
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
   - type: FinOps
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
 - aid: trading212:trading212-historical-events-api
   name: Trading 212 Historical events API
-  description: >-
-    Review your account's trading history. Access detailed records of past
+  description: 'Review your account''s trading history. Access detailed records of past
 
     orders, dividend payments, and cash transactions, or generate downloadable
 
-    CSV reports for analysis and record-keeping.
+    CSV reports for analysis and record-keeping.'
   humanURL: https://docs.trading212.com/api
   baseURL: https://live.trading212.com/api/v0
   tags:
@@ -116,11 +106,9 @@ apis:
   - type: Examples
     url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/examples/
   - type: Vocabulary
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
   - type: Authentication
     url: https://docs.trading212.com/api/section/authentication
   - type: Environments
@@ -134,22 +122,18 @@ apis:
   - type: Community
     url: https://community.trading212.com/
   - type: Plans
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
   - type: RateLimits
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
   - type: FinOps
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
 - aid: trading212:trading212-instruments-api
   name: Trading 212 Instruments API
-  description: >-
-    Discover what you can trade. These endpoints provide comprehensive lists
+  description: 'Discover what you can trade. These endpoints provide comprehensive lists
 
     of all tradable instruments and the exchanges they belong to, including
 
-    details like tickers and trading hours.
+    details like tickers and trading hours.'
   humanURL: https://docs.trading212.com/api
   baseURL: https://live.trading212.com/api/v0
   tags:
@@ -164,11 +148,9 @@ apis:
   - type: Examples
     url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/examples/
   - type: Vocabulary
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
   - type: Authentication
     url: https://docs.trading212.com/api/section/authentication
   - type: Environments
@@ -182,18 +164,14 @@ apis:
   - type: Community
     url: https://community.trading212.com/
   - type: Plans
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
   - type: RateLimits
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
   - type: FinOps
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
 - aid: trading212:trading212-orders-api
   name: Trading 212 Orders API
-  description: >-
-    **⚠️ Order Limitations**
+  description: '**⚠️ Order Limitations**
 
 
     * Orders can be executed only in the **main account currency**
@@ -204,7 +182,7 @@ apis:
 
     core functionality for programmatically executing your trading strategies
 
-    for stocks and ETFs.
+    for stocks and ETFs.'
   humanURL: https://docs.trading212.com/api
   baseURL: https://live.trading212.com/api/v0
   tags:
@@ -221,11 +199,9 @@ apis:
   - type: Examples
     url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/examples/
   - type: Vocabulary
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
   - type: Authentication
     url: https://docs.trading212.com/api/section/authentication
   - type: Environments
@@ -239,23 +215,19 @@ apis:
   - type: Community
     url: https://community.trading212.com/
   - type: Plans
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
   - type: RateLimits
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
   - type: FinOps
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
 - aid: trading212:trading212-pies-deprecated-api
   name: Trading 212 Pies (Deprecated) API
-  description: >-
-    Manage your investment Pies. Use these endpoints to create, view, update, and delete your custom portfolios,
-    making automated and diversified investing simple.
+  description: 'Manage your investment Pies. Use these endpoints to create, view, update, and delete your
+    custom portfolios, making automated and diversified investing simple.
 
 
-    **Deprecation notice:** The current state of the Pies API, while still operational, won't be further
-    supported and updated.
+    **Deprecation notice:** The current state of the Pies API, while still operational, won''t be further
+    supported and updated.'
   humanURL: https://docs.trading212.com/api
   baseURL: https://live.trading212.com/api/v0
   tags:
@@ -270,11 +242,9 @@ apis:
   - type: Examples
     url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/examples/
   - type: Vocabulary
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
   - type: Authentication
     url: https://docs.trading212.com/api/section/authentication
   - type: Environments
@@ -288,19 +258,15 @@ apis:
   - type: Community
     url: https://community.trading212.com/
   - type: Plans
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
   - type: RateLimits
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
   - type: FinOps
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
 - aid: trading212:trading212-positions-api
   name: Trading 212 Positions API
-  description: >-
-    Get a real-time overview of all your open positions, including quantity, average price, and current
-    profit or loss.
+  description: Get a real-time overview of all your open positions, including quantity, average price,
+    and current profit or loss.
   humanURL: https://docs.trading212.com/api
   baseURL: https://live.trading212.com/api/v0
   tags:
@@ -315,11 +281,9 @@ apis:
   - type: Examples
     url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/examples/
   - type: Vocabulary
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/vocabulary/vocabulary.json
   - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
+    url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/json-ld/api.jsonld
   - type: Authentication
     url: https://docs.trading212.com/api/section/authentication
   - type: Environments
@@ -333,40 +297,39 @@ apis:
   - type: Community
     url: https://community.trading212.com/
   - type: Plans
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
-  - type: RateLimits
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
-  - type: FinOps
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
-common:
-  - type: AgenticAccess
-    url: agentic-access/trading212-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/trading212-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/trading212-domain-security.yml
-  - type: Authentication
-    url: authentication/trading212-authentication.yml
-  - type: TermsOfService
-    url: https://www.trading212.com/legal-documentation/API-Terms_EN.pdf
-  - type: Authentication
-    url: https://docs.trading212.com/api/section/authentication
-  - type: RateLimiting
-    url: https://docs.trading212.com/api/section/rate-limiting/how-it-works
-  - type: Community
-    url: https://community.trading212.com/
-  - type: HelpCentre
-    url: https://helpcentre.trading212.com/
-  - type: Plans
     url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
   - type: RateLimits
     url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
   - type: FinOps
     url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
+common:
+- type: Website
+  url: https://trading212.com
+- type: AgenticAccess
+  url: agentic-access/trading212-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/trading212-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/trading212-domain-security.yml
+- type: Authentication
+  url: authentication/trading212-authentication.yml
+- type: TermsOfService
+  url: https://www.trading212.com/legal-documentation/API-Terms_EN.pdf
+- type: Authentication
+  url: https://docs.trading212.com/api/section/authentication
+- type: RateLimiting
+  url: https://docs.trading212.com/api/section/rate-limiting/how-it-works
+- type: Community
+  url: https://community.trading212.com/
+- type: HelpCentre
+  url: https://helpcentre.trading212.com/
+- type: Plans
+  url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/plans/plans.yml
+- type: RateLimits
+  url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/rate-limits/rate-limits.yml
+- type: FinOps
+  url: https://raw.githubusercontent.com/api-evangelist/trading212/refs/heads/main/finops/finops.yml
 maintainers:
-  - FN: API Evangelist
-    url: https://apievangelist.com
-    email: info@apievangelist.com
+- FN: API Evangelist
+  url: https://apievangelist.com
+  email: info@apievangelist.com
