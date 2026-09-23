@@ -1,12 +1,7 @@
 {
   "provider": "trading212",
   "sources": [
-    "trading212-accounts-api-openapi.yml",
-    "trading212-historical-events-api-openapi.yml",
-    "trading212-instruments-api-openapi.yml",
-    "trading212-orders-api-openapi.yml",
-    "trading212-pies-deprecated-api-openapi.yml",
-    "trading212-positions-api-openapi.yml"
+    "_original/openapi.yaml"
   ],
   "outputs": [
     "trading212-accounts-api-openapi.yml",
@@ -19,6 +14,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yaml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "trading212-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "trading212-historical-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "trading212-instruments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "trading212-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "trading212-pies-deprecated-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "trading212-positions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
