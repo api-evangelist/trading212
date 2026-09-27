@@ -238,6 +238,39 @@ paths:
       - Pies (Deprecated)
 components:
   schemas:
+    DividendDetails:
+      properties:
+        gained:
+          type: number
+        inCash:
+          type: number
+        reinvested:
+          type: number
+      type: object
+    AccountBucketResultResponse:
+      properties:
+        cash:
+          description: Amount of money put into the pie in account currency
+          type: number
+        dividendDetails:
+          $ref: '#/components/schemas/DividendDetails'
+        id:
+          format: int64
+          type: integer
+        progress:
+          description: Progress of the pie based on the set goal
+          example: 0.5
+          type: number
+        result:
+          $ref: '#/components/schemas/InvestmentResult'
+        status:
+          description: Status of the pie based on the set goal
+          enum:
+          - AHEAD
+          - ON_TRACK
+          - BEHIND
+          type: string
+      type: object
     AccountBucketDetailedResponse:
       properties:
         creationDate:
@@ -269,56 +302,42 @@ components:
         publicUrl:
           type: string
       type: object
-    InstrumentIssue:
+    AccountBucketInstrumentResult:
       properties:
-        name:
-          enum:
-          - DELISTED
-          - SUSPENDED
-          - NO_LONGER_TRADABLE
-          - MAX_POSITION_SIZE_REACHED
-          - APPROACHING_MAX_POSITION_SIZE
-          - COMPLEX_INSTRUMENT_APP_TEST_REQUIRED
-          - PRICE_TOO_LOW
-          type: string
-        severity:
-          enum:
-          - IRREVERSIBLE
-          - REVERSIBLE
-          - INFORMATIVE
-          type: string
-      type: object
-    AccountBucketResultResponse:
-      properties:
-        cash:
-          description: Amount of money put into the pie in account currency
+        currentShare:
           type: number
-        dividendDetails:
-          $ref: '#/components/schemas/DividendDetails'
-        id:
-          format: int64
-          type: integer
-        progress:
-          description: Progress of the pie based on the set goal
-          example: 0.5
+        expectedShare:
+          type: number
+        issues:
+          items:
+            $ref: '#/components/schemas/InstrumentIssue'
+          type: array
+          uniqueItems: true
+        ownedQuantity:
           type: number
         result:
           $ref: '#/components/schemas/InvestmentResult'
-        status:
-          description: Status of the pie based on the set goal
-          enum:
-          - AHEAD
-          - ON_TRACK
-          - BEHIND
+        ticker:
           type: string
       type: object
-    DividendDetails:
+    AccountBucketInstrumentsDetailedResponse:
       properties:
-        gained:
+        instruments:
+          items:
+            $ref: '#/components/schemas/AccountBucketInstrumentResult'
+          type: array
+        settings:
+          $ref: '#/components/schemas/AccountBucketDetailedResponse'
+      type: object
+    InvestmentResult:
+      properties:
+        priceAvgInvestedValue:
           type: number
-        inCash:
+        priceAvgResult:
           type: number
-        reinvested:
+        priceAvgResultCoef:
+          type: number
+        priceAvgValue:
           type: number
       type: object
     PieRequest:
@@ -346,15 +365,6 @@ components:
         name:
           type: string
       type: object
-    AccountBucketInstrumentsDetailedResponse:
-      properties:
-        instruments:
-          items:
-            $ref: '#/components/schemas/AccountBucketInstrumentResult'
-          type: array
-        settings:
-          $ref: '#/components/schemas/AccountBucketDetailedResponse'
-      type: object
     DuplicateBucketRequest:
       properties:
         icon:
@@ -362,33 +372,23 @@ components:
         name:
           type: string
       type: object
-    InvestmentResult:
+    InstrumentIssue:
       properties:
-        priceAvgInvestedValue:
-          type: number
-        priceAvgResult:
-          type: number
-        priceAvgResultCoef:
-          type: number
-        priceAvgValue:
-          type: number
-      type: object
-    AccountBucketInstrumentResult:
-      properties:
-        currentShare:
-          type: number
-        expectedShare:
-          type: number
-        issues:
-          items:
-            $ref: '#/components/schemas/InstrumentIssue'
-          type: array
-          uniqueItems: true
-        ownedQuantity:
-          type: number
-        result:
-          $ref: '#/components/schemas/InvestmentResult'
-        ticker:
+        name:
+          enum:
+          - DELISTED
+          - SUSPENDED
+          - NO_LONGER_TRADABLE
+          - MAX_POSITION_SIZE_REACHED
+          - APPROACHING_MAX_POSITION_SIZE
+          - COMPLEX_INSTRUMENT_APP_TEST_REQUIRED
+          - PRICE_TOO_LOW
+          type: string
+        severity:
+          enum:
+          - IRREVERSIBLE
+          - REVERSIBLE
+          - INFORMATIVE
           type: string
       type: object
   securitySchemes:

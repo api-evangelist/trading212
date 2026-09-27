@@ -260,14 +260,12 @@ paths:
       - Historical events
 components:
   schemas:
-    PaginatedResponseHistoryTransactionItem:
+    HistoricalOrder:
       properties:
-        items:
-          items:
-            $ref: '#/components/schemas/HistoryTransactionItem'
-          type: array
-        nextPagePath:
-          type: string
+        fill:
+          $ref: '#/components/schemas/Fill'
+        order:
+          $ref: '#/components/schemas/Order'
       type: object
     Instrument:
       description: Instrument information as given by /instruments endpoint.
@@ -292,11 +290,14 @@ components:
       - DAY
       - GOOD_TILL_CANCEL
       type: string
-    EnqueuedReportResponse:
+    PaginatedResponseHistoricalOrder:
       properties:
-        reportId:
-          format: int64
-          type: integer
+        items:
+          items:
+            $ref: '#/components/schemas/HistoricalOrder'
+          type: array
+        nextPagePath:
+          type: string
       type: object
     Fill:
       properties:
@@ -332,127 +333,6 @@ components:
           type: string
         walletImpact:
           $ref: '#/components/schemas/FillWalletImpact'
-      type: object
-    HistoryTransactionItem:
-      properties:
-        amount:
-          description: Amount in the currency of the transaction
-          type: number
-        currency:
-          description: Currency of the transaction
-          type: string
-        dateTime:
-          format: date-time
-          type: string
-        reference:
-          description: ID
-          type: string
-        type:
-          enum:
-          - WITHDRAW
-          - DEPOSIT
-          - FEE
-          - TRANSFER
-          type: string
-      type: object
-    HistoricalOrder:
-      properties:
-        fill:
-          $ref: '#/components/schemas/Fill'
-        order:
-          $ref: '#/components/schemas/Order'
-      type: object
-    ReportDataIncluded:
-      properties:
-        includeDividends:
-          type: boolean
-        includeInterest:
-          type: boolean
-        includeOrders:
-          type: boolean
-        includeTransactions:
-          type: boolean
-      type: object
-    ReportResponse:
-      properties:
-        dataIncluded:
-          $ref: '#/components/schemas/ReportDataIncluded'
-        downloadLink:
-          type: string
-        reportId:
-          format: int64
-          type: integer
-        status:
-          enum:
-          - Queued
-          - Processing
-          - Running
-          - Canceled
-          - Failed
-          - Finished
-          type: string
-        timeFrom:
-          format: date-time
-          type: string
-        timeTo:
-          format: date-time
-          type: string
-      type: object
-    FillWalletImpact:
-      properties:
-        currency:
-          type: string
-        fxRate:
-          type: number
-        netValue:
-          type: number
-        realisedProfitLoss:
-          type: number
-        taxes:
-          items:
-            $ref: '#/components/schemas/Tax'
-          type: array
-      type: object
-    PublicReportRequest:
-      properties:
-        dataIncluded:
-          $ref: '#/components/schemas/ReportDataIncluded'
-        timeFrom:
-          format: date-time
-          type: string
-        timeTo:
-          format: date-time
-          type: string
-      type: object
-    Tax:
-      properties:
-        chargedAt:
-          format: date-time
-          type: string
-        currency:
-          type: string
-        name:
-          enum:
-          - COMMISSION_TURNOVER
-          - CURRENCY_CONVERSION_FEE
-          - FINRA_FEE
-          - FRENCH_TRANSACTION_TAX
-          - PTM_LEVY
-          - STAMP_DUTY
-          - STAMP_DUTY_RESERVE_TAX
-          - TRANSACTION_FEE
-          type: string
-        quantity:
-          type: number
-      type: object
-    PaginatedResponseHistoryDividendItem:
-      properties:
-        items:
-          items:
-            $ref: '#/components/schemas/HistoryDividendItem'
-          type: array
-        nextPagePath:
-          type: string
       type: object
     HistoryDividendItem:
       properties:
@@ -542,6 +422,60 @@ components:
           - TAX_EXEMPTED_MANUFACTURED_PAYMENT
           type: string
       type: object
+    HistoryTransactionItem:
+      properties:
+        amount:
+          description: Amount in the currency of the transaction
+          type: number
+        currency:
+          description: Currency of the transaction
+          type: string
+        dateTime:
+          format: date-time
+          type: string
+        reference:
+          description: ID
+          type: string
+        type:
+          enum:
+          - WITHDRAW
+          - DEPOSIT
+          - FEE
+          - TRANSFER
+          type: string
+      type: object
+    PublicReportRequest:
+      properties:
+        dataIncluded:
+          $ref: '#/components/schemas/ReportDataIncluded'
+        timeFrom:
+          format: date-time
+          type: string
+        timeTo:
+          format: date-time
+          type: string
+      type: object
+    EnqueuedReportResponse:
+      properties:
+        reportId:
+          format: int64
+          type: integer
+      type: object
+    FillWalletImpact:
+      properties:
+        currency:
+          type: string
+        fxRate:
+          type: number
+        netValue:
+          type: number
+        realisedProfitLoss:
+          type: number
+        taxes:
+          items:
+            $ref: '#/components/schemas/Tax'
+          type: array
+      type: object
     Order:
       properties:
         createdAt:
@@ -630,11 +564,77 @@ components:
           description: The total monetary value of the order. Applicable to value orders.
           type: number
       type: object
-    PaginatedResponseHistoricalOrder:
+    ReportResponse:
+      properties:
+        dataIncluded:
+          $ref: '#/components/schemas/ReportDataIncluded'
+        downloadLink:
+          type: string
+        reportId:
+          format: int64
+          type: integer
+        status:
+          enum:
+          - Queued
+          - Processing
+          - Running
+          - Canceled
+          - Failed
+          - Finished
+          type: string
+        timeFrom:
+          format: date-time
+          type: string
+        timeTo:
+          format: date-time
+          type: string
+      type: object
+    PaginatedResponseHistoryDividendItem:
       properties:
         items:
           items:
-            $ref: '#/components/schemas/HistoricalOrder'
+            $ref: '#/components/schemas/HistoryDividendItem'
+          type: array
+        nextPagePath:
+          type: string
+      type: object
+    ReportDataIncluded:
+      properties:
+        includeDividends:
+          type: boolean
+        includeInterest:
+          type: boolean
+        includeOrders:
+          type: boolean
+        includeTransactions:
+          type: boolean
+      type: object
+    Tax:
+      properties:
+        chargedAt:
+          format: date-time
+          type: string
+        currency:
+          type: string
+        name:
+          enum:
+          - COMMISSION_TURNOVER
+          - CURRENCY_CONVERSION_FEE
+          - FINRA_FEE
+          - FRENCH_TRANSACTION_TAX
+          - PTM_LEVY
+          - STAMP_DUTY
+          - STAMP_DUTY_RESERVE_TAX
+          - TRANSACTION_FEE
+          type: string
+        quantity:
+          type: number
+      type: object
+    PaginatedResponseHistoryTransactionItem:
+      properties:
+        items:
+          items:
+            $ref: '#/components/schemas/HistoryTransactionItem'
           type: array
         nextPagePath:
           type: string

@@ -428,13 +428,13 @@ components:
           example: AAPL_US_EQ
           type: string
       type: object
-    StopRequest:
+    LimitRequest:
       properties:
+        limitPrice:
+          example: 100.23
+          type: number
         quantity:
           example: 0.1
-          type: number
-        stopPrice:
-          example: 100.23
           type: number
         ticker:
           example: AAPL_US_EQ
@@ -444,13 +444,13 @@ components:
           description: Expiration
           example: DAY
       type: object
-    LimitRequest:
+    StopRequest:
       properties:
-        limitPrice:
-          example: 100.23
-          type: number
         quantity:
           example: 0.1
+          type: number
+        stopPrice:
+          example: 100.23
           type: number
         ticker:
           example: AAPL_US_EQ
@@ -479,12 +479,6 @@ components:
           description: Expiration
           example: DAY
       type: object
-    TimeValidity:
-      description: "Specifies how long the order remains active: \n* DAY: The order will automatically expire if not executed by midnight in the time zone of the instrument's exchange.\n* GOOD_TILL_CANCEL: The order remains active indefinitely until it is either filled or explicitly cancelled by you."
-      enum:
-      - DAY
-      - GOOD_TILL_CANCEL
-      type: string
     Order:
       properties:
         createdAt:
@@ -573,6 +567,12 @@ components:
           description: The total monetary value of the order. Applicable to value orders.
           type: number
       type: object
+    TimeValidity:
+      description: "Specifies how long the order remains active: \n* DAY: The order will automatically expire if not executed by midnight in the time zone of the instrument's exchange.\n* GOOD_TILL_CANCEL: The order remains active indefinitely until it is either filled or explicitly cancelled by you."
+      enum:
+      - DAY
+      - GOOD_TILL_CANCEL
+      type: string
     MarketRequest:
       properties:
         extendedHours:
