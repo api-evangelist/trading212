@@ -238,14 +238,31 @@ paths:
       - Pies (Deprecated)
 components:
   schemas:
-    DividendDetails:
+    DuplicateBucketRequest:
       properties:
-        gained:
-          type: number
-        inCash:
-          type: number
-        reinvested:
-          type: number
+        icon:
+          type: string
+        name:
+          type: string
+      type: object
+    InstrumentIssue:
+      properties:
+        name:
+          enum:
+          - DELISTED
+          - SUSPENDED
+          - NO_LONGER_TRADABLE
+          - MAX_POSITION_SIZE_REACHED
+          - APPROACHING_MAX_POSITION_SIZE
+          - COMPLEX_INSTRUMENT_APP_TEST_REQUIRED
+          - PRICE_TOO_LOW
+          type: string
+        severity:
+          enum:
+          - IRREVERSIBLE
+          - REVERSIBLE
+          - INFORMATIVE
+          type: string
       type: object
     AccountBucketResultResponse:
       properties:
@@ -271,36 +288,14 @@ components:
           - BEHIND
           type: string
       type: object
-    AccountBucketDetailedResponse:
+    DividendDetails:
       properties:
-        creationDate:
-          format: date-time
-          type: string
-        dividendCashAction:
-          enum:
-          - REINVEST
-          - TO_ACCOUNT_CASH
-          type: string
-        endDate:
-          format: date-time
-          type: string
-        goal:
+        gained:
           type: number
-        icon:
-          type: string
-        id:
-          format: int64
-          type: integer
-        initialInvestment:
+        inCash:
           type: number
-        instrumentShares:
-          additionalProperties:
-            type: number
-          type: object
-        name:
-          type: string
-        publicUrl:
-          type: string
+        reinvested:
+          type: number
       type: object
     AccountBucketInstrumentResult:
       properties:
@@ -319,15 +314,6 @@ components:
           $ref: '#/components/schemas/InvestmentResult'
         ticker:
           type: string
-      type: object
-    AccountBucketInstrumentsDetailedResponse:
-      properties:
-        instruments:
-          items:
-            $ref: '#/components/schemas/AccountBucketInstrumentResult'
-          type: array
-        settings:
-          $ref: '#/components/schemas/AccountBucketDetailedResponse'
       type: object
     InvestmentResult:
       properties:
@@ -365,31 +351,45 @@ components:
         name:
           type: string
       type: object
-    DuplicateBucketRequest:
+    AccountBucketDetailedResponse:
       properties:
+        creationDate:
+          format: date-time
+          type: string
+        dividendCashAction:
+          enum:
+          - REINVEST
+          - TO_ACCOUNT_CASH
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        goal:
+          type: number
         icon:
           type: string
+        id:
+          format: int64
+          type: integer
+        initialInvestment:
+          type: number
+        instrumentShares:
+          additionalProperties:
+            type: number
+          type: object
         name:
+          type: string
+        publicUrl:
           type: string
       type: object
-    InstrumentIssue:
+    AccountBucketInstrumentsDetailedResponse:
       properties:
-        name:
-          enum:
-          - DELISTED
-          - SUSPENDED
-          - NO_LONGER_TRADABLE
-          - MAX_POSITION_SIZE_REACHED
-          - APPROACHING_MAX_POSITION_SIZE
-          - COMPLEX_INSTRUMENT_APP_TEST_REQUIRED
-          - PRICE_TOO_LOW
-          type: string
-        severity:
-          enum:
-          - IRREVERSIBLE
-          - REVERSIBLE
-          - INFORMATIVE
-          type: string
+        instruments:
+          items:
+            $ref: '#/components/schemas/AccountBucketInstrumentResult'
+          type: array
+        settings:
+          $ref: '#/components/schemas/AccountBucketDetailedResponse'
       type: object
   securitySchemes:
     authWithSecretKey:

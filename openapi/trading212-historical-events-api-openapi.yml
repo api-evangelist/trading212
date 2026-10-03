@@ -260,12 +260,14 @@ paths:
       - Historical events
 components:
   schemas:
-    HistoricalOrder:
+    PaginatedResponseHistoricalOrder:
       properties:
-        fill:
-          $ref: '#/components/schemas/Fill'
-        order:
-          $ref: '#/components/schemas/Order'
+        items:
+          items:
+            $ref: '#/components/schemas/HistoricalOrder'
+          type: array
+        nextPagePath:
+          type: string
       type: object
     Instrument:
       description: Instrument information as given by /instruments endpoint.
@@ -283,56 +285,6 @@ components:
           description: Unique instrument identifier.
           example: AAPL_US_EQ
           type: string
-      type: object
-    TimeValidity:
-      description: "Specifies how long the order remains active: \n* DAY: The order will automatically expire if not executed by midnight in the time zone of the instrument's exchange.\n* GOOD_TILL_CANCEL: The order remains active indefinitely until it is either filled or explicitly cancelled by you."
-      enum:
-      - DAY
-      - GOOD_TILL_CANCEL
-      type: string
-    PaginatedResponseHistoricalOrder:
-      properties:
-        items:
-          items:
-            $ref: '#/components/schemas/HistoricalOrder'
-          type: array
-        nextPagePath:
-          type: string
-      type: object
-    Fill:
-      properties:
-        filledAt:
-          format: date-time
-          type: string
-        id:
-          format: int64
-          type: integer
-        price:
-          type: number
-        quantity:
-          type: number
-        tradingMethod:
-          enum:
-          - TOTV
-          - OTC
-          type: string
-        type:
-          enum:
-          - TRADE
-          - STOCK_SPLIT
-          - STOCK_DISTRIBUTION
-          - FOP
-          - FOP_CORRECTION
-          - CUSTOM_STOCK_DISTRIBUTION
-          - EQUITY_RIGHTS
-          - SCRIP_STOCK_DIVIDENDS
-          - STOCK_DIVIDENDS
-          - STOCK_ACQUISITION
-          - CASH_AND_STOCK_ACQUISITION
-          - SPIN_OFF
-          type: string
-        walletImpact:
-          $ref: '#/components/schemas/FillWalletImpact'
       type: object
     HistoryDividendItem:
       properties:
@@ -422,59 +374,48 @@ components:
           - TAX_EXEMPTED_MANUFACTURED_PAYMENT
           type: string
       type: object
-    HistoryTransactionItem:
+    PaginatedResponseHistoryTransactionItem:
       properties:
-        amount:
-          description: Amount in the currency of the transaction
-          type: number
-        currency:
-          description: Currency of the transaction
-          type: string
-        dateTime:
-          format: date-time
-          type: string
-        reference:
-          description: ID
-          type: string
-        type:
-          enum:
-          - WITHDRAW
-          - DEPOSIT
-          - FEE
-          - TRANSFER
-          type: string
-      type: object
-    PublicReportRequest:
-      properties:
-        dataIncluded:
-          $ref: '#/components/schemas/ReportDataIncluded'
-        timeFrom:
-          format: date-time
-          type: string
-        timeTo:
-          format: date-time
-          type: string
-      type: object
-    EnqueuedReportResponse:
-      properties:
-        reportId:
-          format: int64
-          type: integer
-      type: object
-    FillWalletImpact:
-      properties:
-        currency:
-          type: string
-        fxRate:
-          type: number
-        netValue:
-          type: number
-        realisedProfitLoss:
-          type: number
-        taxes:
+        items:
           items:
-            $ref: '#/components/schemas/Tax'
+            $ref: '#/components/schemas/HistoryTransactionItem'
           type: array
+        nextPagePath:
+          type: string
+      type: object
+    TimeValidity:
+      description: "Specifies how long the order remains active: \n* DAY: The order will automatically expire if not executed by midnight in the time zone of the instrument's exchange.\n* GOOD_TILL_CANCEL: The order remains active indefinitely until it is either filled or explicitly cancelled by you."
+      enum:
+      - DAY
+      - GOOD_TILL_CANCEL
+      type: string
+    Tax:
+      properties:
+        chargedAt:
+          format: date-time
+          type: string
+        currency:
+          type: string
+        name:
+          enum:
+          - COMMISSION_TURNOVER
+          - CURRENCY_CONVERSION_FEE
+          - FINRA_FEE
+          - FRENCH_TRANSACTION_TAX
+          - PTM_LEVY
+          - STAMP_DUTY
+          - STAMP_DUTY_RESERVE_TAX
+          - TRANSACTION_FEE
+          type: string
+        quantity:
+          type: number
+      type: object
+    HistoricalOrder:
+      properties:
+        fill:
+          $ref: '#/components/schemas/Fill'
+        order:
+          $ref: '#/components/schemas/Order'
       type: object
     Order:
       properties:
@@ -564,6 +505,95 @@ components:
           description: The total monetary value of the order. Applicable to value orders.
           type: number
       type: object
+    ReportDataIncluded:
+      properties:
+        includeDividends:
+          type: boolean
+        includeInterest:
+          type: boolean
+        includeOrders:
+          type: boolean
+        includeTransactions:
+          type: boolean
+      type: object
+    EnqueuedReportResponse:
+      properties:
+        reportId:
+          format: int64
+          type: integer
+      type: object
+    HistoryTransactionItem:
+      properties:
+        amount:
+          description: Amount in the currency of the transaction
+          type: number
+        currency:
+          description: Currency of the transaction
+          type: string
+        dateTime:
+          format: date-time
+          type: string
+        reference:
+          description: ID
+          type: string
+        type:
+          enum:
+          - WITHDRAW
+          - DEPOSIT
+          - FEE
+          - TRANSFER
+          type: string
+      type: object
+    Fill:
+      properties:
+        filledAt:
+          format: date-time
+          type: string
+        id:
+          format: int64
+          type: integer
+        price:
+          type: number
+        quantity:
+          type: number
+        tradingMethod:
+          enum:
+          - TOTV
+          - OTC
+          type: string
+        type:
+          enum:
+          - TRADE
+          - STOCK_SPLIT
+          - STOCK_DISTRIBUTION
+          - FOP
+          - FOP_CORRECTION
+          - CUSTOM_STOCK_DISTRIBUTION
+          - EQUITY_RIGHTS
+          - SCRIP_STOCK_DIVIDENDS
+          - STOCK_DIVIDENDS
+          - STOCK_ACQUISITION
+          - CASH_AND_STOCK_ACQUISITION
+          - SPIN_OFF
+          type: string
+        walletImpact:
+          $ref: '#/components/schemas/FillWalletImpact'
+      type: object
+    FillWalletImpact:
+      properties:
+        currency:
+          type: string
+        fxRate:
+          type: number
+        netValue:
+          type: number
+        realisedProfitLoss:
+          type: number
+        taxes:
+          items:
+            $ref: '#/components/schemas/Tax'
+          type: array
+      type: object
     ReportResponse:
       properties:
         dataIncluded:
@@ -598,45 +628,15 @@ components:
         nextPagePath:
           type: string
       type: object
-    ReportDataIncluded:
+    PublicReportRequest:
       properties:
-        includeDividends:
-          type: boolean
-        includeInterest:
-          type: boolean
-        includeOrders:
-          type: boolean
-        includeTransactions:
-          type: boolean
-      type: object
-    Tax:
-      properties:
-        chargedAt:
+        dataIncluded:
+          $ref: '#/components/schemas/ReportDataIncluded'
+        timeFrom:
           format: date-time
           type: string
-        currency:
-          type: string
-        name:
-          enum:
-          - COMMISSION_TURNOVER
-          - CURRENCY_CONVERSION_FEE
-          - FINRA_FEE
-          - FRENCH_TRANSACTION_TAX
-          - PTM_LEVY
-          - STAMP_DUTY
-          - STAMP_DUTY_RESERVE_TAX
-          - TRANSACTION_FEE
-          type: string
-        quantity:
-          type: number
-      type: object
-    PaginatedResponseHistoryTransactionItem:
-      properties:
-        items:
-          items:
-            $ref: '#/components/schemas/HistoryTransactionItem'
-          type: array
-        nextPagePath:
+        timeTo:
+          format: date-time
           type: string
       type: object
   securitySchemes:

@@ -42,6 +42,23 @@ paths:
       - Accounts
 components:
   schemas:
+    AccountSummary:
+      properties:
+        cash:
+          $ref: '#/components/schemas/Cash'
+        currency:
+          description: Primary account currency in ISO 4217 format.
+          type: string
+        id:
+          description: Primary trading account number. This is the same account ID you would see in the Trading 212 web or mobile application.
+          format: int64
+          type: integer
+        investments:
+          $ref: '#/components/schemas/Investments'
+        totalValue:
+          description: Investments value in your account's primary currency.
+          type: number
+      type: object
     Investments:
       properties:
         currentValue:
@@ -67,23 +84,6 @@ components:
           type: number
         reservedForOrders:
           description: The amount of cash reserved for pending orders. This cash is not available for placing new trades.
-          type: number
-      type: object
-    AccountSummary:
-      properties:
-        cash:
-          $ref: '#/components/schemas/Cash'
-        currency:
-          description: Primary account currency in ISO 4217 format.
-          type: string
-        id:
-          description: Primary trading account number. This is the same account ID you would see in the Trading 212 web or mobile application.
-          format: int64
-          type: integer
-        investments:
-          $ref: '#/components/schemas/Investments'
-        totalValue:
-          description: Investments value in your account's primary currency.
           type: number
       type: object
   securitySchemes:
