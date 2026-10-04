@@ -1,29 +1,27 @@
-# Kin Score artifact — trading212 — 2026-08-27T094438
+# Kin Score artifact — trading212 — 2026-09-25T210408
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: trading212
-  schema_version: 0.15.1
-  scored_at: '2026-08-27'
-  run_ts: 2026-08-27T094438
-  composite: 47.3
+  schema_version: 0.23.0
+  scored_at: '2026-09-25'
+  run_ts: 2026-09-25T210408
+  composite: 42.1
   band: developing
   facets:
-    discoverability: 74.1
-    contract_quality: 68.8
-    governance: 25.0
-    operational_transparency: 31.6
+    discoverability: 66.1
+    contract_quality: 64.1
+    contract_governance: 23.5
+    operational_transparency: 28.4
     developer_ergonomics: 23.8
-    commercial_clarity: 39.5
-    contract_governance: 25.0
-    access_clarity: 39.5
+    access_clarity: 37.4
   agent_readiness:
-    score: 22.3
+    score: 24.0
     band: agent-aware
     dimensions:
       spec_presence: true
       agentic_access: derived
-      reversibility_documented: false
+      reversibility_documented: documented
       mcp_server: false
       auth_clarity: bearer
       idempotency: false
@@ -44,7 +42,7 @@ kin_score:
     applies: true
     regime: Securities & Market Data
     regime_id: securities_market_data
-    score: 55.0
+    score: 30.6
     matched_via: weak_tags
   provenance:
     agentic_access: derived
