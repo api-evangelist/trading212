@@ -42,6 +42,21 @@ paths:
       - Accounts
 components:
   schemas:
+    Investments:
+      properties:
+        currentValue:
+          description: Current value of all the investments.
+          type: number
+        realizedProfitLoss:
+          description: The all-time realised profit loss from all of the trades executed.
+          type: number
+        totalCost:
+          description: The cost basis of your current investments. The total amount of funds you've invested in the shares you currently own.
+          type: number
+        unrealizedProfitLoss:
+          description: The potential profit/loss of your current investments, showing how much you could gain or lose if you were to sell them now.
+          type: number
+      type: object
     AccountSummary:
       properties:
         cash:
@@ -57,21 +72,6 @@ components:
           $ref: '#/components/schemas/Investments'
         totalValue:
           description: Investments value in your account's primary currency.
-          type: number
-      type: object
-    Investments:
-      properties:
-        currentValue:
-          description: Current value of all the investments.
-          type: number
-        realizedProfitLoss:
-          description: The all-time realised profit loss from all of the trades executed.
-          type: number
-        totalCost:
-          description: The cost basis of your current investments. The total amount of funds you've invested in the shares you currently own.
-          type: number
-        unrealizedProfitLoss:
-          description: The potential profit/loss of your current investments, showing how much you could gain or lose if you were to sell them now.
           type: number
       type: object
     Cash:
