@@ -1,3 +1,7 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
 name: Trading 212 API Plans
 description: >-
   Trading 212 does not publish tiered commercial pricing plans for API access.
@@ -41,3 +45,15 @@ plans:
       - CFD accounts are not supported
       - Pies API endpoints are operational but will not receive further updates
       - API is in beta; breaking changes may occur
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Free (Invest / ISA Account Holders)
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
