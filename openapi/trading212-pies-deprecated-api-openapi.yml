@@ -238,62 +238,6 @@ paths:
       - Pies (Deprecated)
 components:
   schemas:
-    PieRequest:
-      properties:
-        dividendCashAction:
-          enum:
-          - REINVEST
-          - TO_ACCOUNT_CASH
-          type: string
-        endDate:
-          format: date-time
-          type: string
-        goal:
-          description: Total desired value of the pie in account currency
-          type: number
-        icon:
-          type: string
-        instrumentShares:
-          additionalProperties:
-            type: number
-          example:
-            AAPL_US_EQ: 0.5
-            MSFT_US_EQ: 0.5
-          type: object
-        name:
-          type: string
-      type: object
-    AccountBucketResultResponse:
-      properties:
-        cash:
-          description: Amount of money put into the pie in account currency
-          type: number
-        dividendDetails:
-          $ref: '#/components/schemas/DividendDetails'
-        id:
-          format: int64
-          type: integer
-        progress:
-          description: Progress of the pie based on the set goal
-          example: 0.5
-          type: number
-        result:
-          $ref: '#/components/schemas/InvestmentResult'
-        status:
-          description: Status of the pie based on the set goal
-          enum:
-          - AHEAD
-          - ON_TRACK
-          - BEHIND
-          type: string
-      type: object
-    DuplicateBucketRequest:
-      properties:
-        icon:
-          type: string
-        name:
-          type: string
-      type: object
     AccountBucketInstrumentResult:
       properties:
         currentShare:
@@ -310,34 +254,6 @@ components:
         result:
           $ref: '#/components/schemas/InvestmentResult'
         ticker:
-          type: string
-      type: object
-    DividendDetails:
-      properties:
-        gained:
-          type: number
-        inCash:
-          type: number
-        reinvested:
-          type: number
-      type: object
-    InstrumentIssue:
-      properties:
-        name:
-          enum:
-          - DELISTED
-          - SUSPENDED
-          - NO_LONGER_TRADABLE
-          - MAX_POSITION_SIZE_REACHED
-          - APPROACHING_MAX_POSITION_SIZE
-          - COMPLEX_INSTRUMENT_APP_TEST_REQUIRED
-          - PRICE_TOO_LOW
-          type: string
-        severity:
-          enum:
-          - IRREVERSIBLE
-          - REVERSIBLE
-          - INFORMATIVE
           type: string
       type: object
     AccountBucketDetailedResponse:
@@ -371,6 +287,64 @@ components:
         publicUrl:
           type: string
       type: object
+    PieRequest:
+      properties:
+        dividendCashAction:
+          enum:
+          - REINVEST
+          - TO_ACCOUNT_CASH
+          type: string
+        endDate:
+          format: date-time
+          type: string
+        goal:
+          description: Total desired value of the pie in account currency
+          type: number
+        icon:
+          type: string
+        instrumentShares:
+          additionalProperties:
+            type: number
+          example:
+            AAPL_US_EQ: 0.5
+            MSFT_US_EQ: 0.5
+          type: object
+        name:
+          type: string
+      type: object
+    DividendDetails:
+      properties:
+        gained:
+          type: number
+        inCash:
+          type: number
+        reinvested:
+          type: number
+      type: object
+    AccountBucketResultResponse:
+      properties:
+        cash:
+          description: Amount of money put into the pie in account currency
+          type: number
+        dividendDetails:
+          $ref: '#/components/schemas/DividendDetails'
+        id:
+          format: int64
+          type: integer
+        progress:
+          description: Progress of the pie based on the set goal
+          example: 0.5
+          type: number
+        result:
+          $ref: '#/components/schemas/InvestmentResult'
+        status:
+          description: Status of the pie based on the set goal
+          enum:
+          - AHEAD
+          - ON_TRACK
+          - BEHIND
+          type: string
+      type: object
     InvestmentResult:
       properties:
         priceAvgInvestedValue:
@@ -381,6 +355,32 @@ components:
           type: number
         priceAvgValue:
           type: number
+      type: object
+    DuplicateBucketRequest:
+      properties:
+        icon:
+          type: string
+        name:
+          type: string
+      type: object
+    InstrumentIssue:
+      properties:
+        name:
+          enum:
+          - DELISTED
+          - SUSPENDED
+          - NO_LONGER_TRADABLE
+          - MAX_POSITION_SIZE_REACHED
+          - APPROACHING_MAX_POSITION_SIZE
+          - COMPLEX_INSTRUMENT_APP_TEST_REQUIRED
+          - PRICE_TOO_LOW
+          type: string
+        severity:
+          enum:
+          - IRREVERSIBLE
+          - REVERSIBLE
+          - INFORMATIVE
+          type: string
       type: object
     AccountBucketInstrumentsDetailedResponse:
       properties:

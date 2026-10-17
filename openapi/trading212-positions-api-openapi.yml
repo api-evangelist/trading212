@@ -49,24 +49,6 @@ paths:
       - Positions
 components:
   schemas:
-    PositionWalletImpact:
-      properties:
-        currency:
-          description: The currency code used to represent all the wallet impact information.
-          type: string
-        currentValue:
-          description: The current market value of the position.
-          type: number
-        fxImpact:
-          description: The positive or negative impact on the position's value due to currency rate changes.
-          type: number
-        totalCost:
-          description: The total cost paid for the position.
-          type: number
-        unrealizedProfitLoss:
-          description: The unrealized profit & loss for the position. Calculated as currentValue - totalCost.
-          type: number
-      type: object
     Instrument:
       description: Instrument information as given by /instruments endpoint.
       properties:
@@ -110,6 +92,24 @@ components:
         walletImpact:
           $ref: '#/components/schemas/PositionWalletImpact'
           description: Collects the financial impact of the position on the user's wallet.
+      type: object
+    PositionWalletImpact:
+      properties:
+        currency:
+          description: The currency code used to represent all the wallet impact information.
+          type: string
+        currentValue:
+          description: The current market value of the position.
+          type: number
+        fxImpact:
+          description: The positive or negative impact on the position's value due to currency rate changes.
+          type: number
+        totalCost:
+          description: The total cost paid for the position.
+          type: number
+        unrealizedProfitLoss:
+          description: The unrealized profit & loss for the position. Calculated as currentValue - totalCost.
+          type: number
       type: object
   securitySchemes:
     authWithSecretKey:
